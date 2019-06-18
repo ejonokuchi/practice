@@ -1,3 +1,10 @@
+"""
+Script to zero-pad the problem numbers of LeetCode files downloaded by the
+leetcode-cli (for proper alphabetic ordering).
+
+"""
+
+
 import os
 import re
 

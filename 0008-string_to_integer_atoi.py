@@ -28,8 +28,8 @@
 #
 # If no valid conversion could be performed, a zero value is returned.
 #
-# Note:
 #
+# Note:
 #
 # Only the space character ' ' is considered as whitespace character.
 # Assume we are dealing with an environment which could only store integers
@@ -40,13 +40,11 @@
 #
 # Example 1:
 #
-#
 # Input: "42"
 # Output: 42
 #
 #
 # Example 2:
-#
 #
 # Input: "   -42"
 # Output: -42
@@ -57,7 +55,6 @@
 #
 # Example 3:
 #
-#
 # Input: "4193 with words"
 # Output: 4193
 # Explanation: Conversion stops at digit '3' as the next character is not a
@@ -65,7 +62,6 @@
 #
 #
 # Example 4:
-#
 #
 # Input: "words and 987"
 # Output: 0
@@ -82,8 +78,85 @@
 # integer.
 # Thefore INT_MIN (−231) is returned.
 #
-#
+
+MAX_INT = (2 ** 31) - 1
+MIN_INT = (- MAX_INT) - 1
+
+WHITESPACE = {' ', '\r', '\t', '\n'}
+SIGN = {'-', '+'}
+DIGITS = {str(x): x for x in range(10)}
+
 
 class Solution:
-    def myAtoi(self, str: str) -> int:
-        pass
+    def myAtoi(self, s : str) -> int:
+        """
+        Converts a string to an integer according to the above rules.
+
+        Does not use int(), regexes, or strip methods.
+
+        """
+        n = len(s)
+        if n == 0:
+            return 0
+
+        i = 0
+
+        # Ignore whitespace
+        while i < n and s[i] in WHITESPACE:
+            i += 1
+        if i == n or s[i] not in SIGN.union(set(DIGITS.keys())):
+            return 0
+
+        # Read sign
+        positive = s[i] in DIGITS or s[i] == '+'
+        if s[i] in SIGN:
+            i += 1
+
+        # Read digits, ignore leading zeros
+        leading_zero = True
+        q = []
+        while i < n and s[i] in DIGITS:
+            if s[i] == '0':
+                if leading_zero:
+                    i += 1
+                    continue
+            else:
+                leading_zero = False
+            q.append(DIGITS[s[i]])
+            i += 1
+        if len(q) == 0:
+            return 0
+        elif len(q) > 10:
+            return MAX_INT if positive else MIN_INT
+
+        # Build number
+        num = 0
+        c = 1
+        while len(q) > 0:
+            num += (q.pop() * c)
+            c *= 10
+        return min(num, MAX_INT) if positive else max(-num, MIN_INT)
+
+
+
+# TESTING
+
+s = Solution()
+
+def test_atoi_1():
+    assert s.myAtoi('42') == 42
+
+def test_atoi_2():
+    assert s.myAtoi('   -42') == -42
+
+def test_atoi_3():
+    assert s.myAtoi('4193 with words') == 4193
+
+def test_atoi_4():
+    assert s.myAtoi('words and -987') == 0
+
+def test_atoi_5():
+    assert s.myAtoi('91283472332') == MAX_INT
+
+def test_atoi_5():
+    assert s.myAtoi('-91283472332') == MIN_INT

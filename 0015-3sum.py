@@ -34,10 +34,16 @@
 #
 class Solution:
     def threeSum(self, l):
+        """
+        Returns unique triplets that sum to 0 from an array of integers.
+
+        To dedupe our solution set, we use a hash set of a sorted tuple of
+        elements.
+
+        """
         n = len(l)
         if n < 3:
             return []
-
         s = set(l)
         solutions = set()
         for i in range(n - 1):

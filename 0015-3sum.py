@@ -49,6 +49,8 @@ class Solution:
         for i in range(n - 1):
             for j in range(i + 1, n):
                 x = -(l[i] + l[j])
+                # The complement is in our set and does not equal one of the
+                # choices we already picked (this would be double-counting).
                 if x in s and (l[i] != x and l[j] != x):
                     solutions.add(tuple(sorted((l[i], l[j], x))))
         if l.count(0) > 2:

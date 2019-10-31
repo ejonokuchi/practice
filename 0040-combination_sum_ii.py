@@ -56,11 +56,11 @@ class Solution:
         if target == 0:
             return [choices]
         solutions = []
-        if not all(x > target for x in l):
-            for ix in range(i, len(l)):
-                if l[ix] > target:
-                    break
-                solutions += self.c_sum_rec(l, target - l[ix], i + 1, choices + [l[ix]])
+        for ix in range(i, len(l)):
+            if l[ix] > target:
+                break
+            solutions += self.c_sum_rec(l, target - l[ix], i + 1, choices + [l[ix]])
+            solutions += self.c_sum_rec(l, target, i + 1, choices)
         return solutions
 
 

@@ -57,12 +57,11 @@ class Solution:
     def dfs(self, l, target, index, path, solutions):
         if target == 0:
             return solutions + [path]
-        else:
-            for i in range(index, len(l)):
-                if l[i] > target:
-                    break
-                solutions = self.dfs(l, target - l[i], i, path + [l[i]], solutions)
-            return solutions
+        for i in range(index, len(l)):
+            if l[i] > target:
+                break
+            solutions = self.dfs(l, target - l[i], i, path + [l[i]], solutions)
+        return solutions
 
     def combinationSum(self, l, target):
         """

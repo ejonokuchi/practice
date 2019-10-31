@@ -3,18 +3,8 @@
 Solutions to LeetCode Problems
 
 To-Dos:
-- 1091
-- 1092
-- 4
-- 8
-- 11
-- 14
-- 15
-- 16
 - 25
 - 35
-- 39
-- 40
 - 43
 - 45
 - 46

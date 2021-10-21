@@ -1,10 +1,12 @@
-# leetcode-solutions
+# interview
 
-Solutions to LeetCode Problems and common algorithm implementations for personal interview prep.
-
-Credit to a user on [Blind](https://www.teamblind.com/post/New-Year-Gift---Curated-List-of-Top-75-LeetCode-Questions-to-Save-Your-Time-OaM1orEU) for the list.
+Software Engineer and Machine Learning Interview resources, for personal use.
+- `/algorithms`: Common algorithm implementations
+- `/leetcode`: Leetcode problems and solutions (credit to [a user on Blind](https://www.teamblind.com/post/New-Year-Gift---Curated-List-of-Top-75-LeetCode-Questions-to-Save-Your-Time-OaM1orEU))
 
 ---
+
+### Leetcode Problems
 
 Arrays:
 - [ ] [1. Two Sum (Easy)](https://leetcode.com/problems/two-sum/)

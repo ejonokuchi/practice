@@ -1,6 +1,6 @@
 # leetcode-solutions
 
-Solutions to LeetCode Problems.
+Solutions to LeetCode Problems and common algorithm implementations for personal interview prep.
 
 ---
 

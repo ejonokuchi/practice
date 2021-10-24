@@ -72,7 +72,7 @@ class Solution:
         complements = {}
         for idx, x in enumerate(nums):
             if x in complements:
-                return list((idx, complements[x]))
+                return [complements[x], idx]
             complements[target - x] = idx
         return None
 

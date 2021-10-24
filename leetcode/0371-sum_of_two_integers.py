@@ -41,6 +41,9 @@ class Solution:
         adds the numbers correctly. With overlapping 1s, we iteratively carry these to
         the left and re-add the carry. This continues until there are no bits to carry.
 
+        Time  : O(b), where b is the mask size used
+        Space : O(1)
+
         Notes
         -----
         Python also requires additional steps due to its variable-length integers.

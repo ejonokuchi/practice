@@ -56,4 +56,16 @@ from typing import List
 
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        pass
+        """
+        Iterate over the list, updating the maximum gain and the minimum price.
+
+        Time  : O(n)
+        Space : O(1)
+        """
+        min_price = prices[0]
+        max_gain = -1
+        for x in prices[1:]:
+            min_price = min(min_price, x)
+            max_gain = max(max_gain, x - min_price)
+        return max(0, max_gain)
+

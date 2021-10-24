@@ -68,4 +68,23 @@
 
 class Solution:
     def hammingWeight(self, n: int) -> int:
-        pass
+        """
+        Use a bit-manipulation trick to iteratively remove the rightmost 1 of a number.
+
+        For any unsigned integer, n & (n - 1) results in the last 1 of n being removed,
+        e.g.
+                n = 10110100
+            n - 1 = 10110011
+        n & (n-1) = 10110000
+
+        This is slightly better than right-shifting 32 times and checking the least
+        significant bit, as it takes only as many iterations as the number of 1s in n.
+
+        Time  : O(b), where b is the number of bits in n
+        Space : O(1)
+        """
+        count = 0
+        while n != 0:
+            n &= n - 1
+            count += 1
+        return count

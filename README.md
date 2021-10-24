@@ -84,7 +84,7 @@ String:
 - [ ] [271. Encode and Decode Strings - Premium (Medium)](https://leetcode.com/problems/encode-and-decode-strings/)
 
 Tree:
-- [ ] [104. Maximum Depth of Binary Tree (Easy)](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
+- [x] [104. Maximum Depth of Binary Tree (Easy)](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
 - [ ] [100. Same Tree (Easy)](https://leetcode.com/problems/same-tree/)
 - [ ] [226. Invert Binary Tree (Easy)](https://leetcode.com/problems/invert-binary-tree/)
 - [ ] [124. Binary Tree Maximum Path Sum (Hard)](https://leetcode.com/problems/binary-tree-maximum-path-sum/)

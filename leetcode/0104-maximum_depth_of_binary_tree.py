@@ -67,4 +67,14 @@ from typing import Optional
 
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
-        pass
+        """
+        Recursively iterate down the left and right sub-trees.
+
+        Time  : O(n), where n is the number of nodes in the tree.
+        Space : O(1)
+        """
+        return (
+            0
+            if root is None
+            else max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1
+        )

@@ -21,7 +21,7 @@ Arrays:
 - [ ] [11. Container With Most Water (Medium)](https://leetcode.com/problems/container-with-most-water/)
 
 Binary:
-- [ ] [371. Sum of Two Integers (Medium)](https://leetcode.com/problems/sum-of-two-integers/)
+- [x] [371. Sum of Two Integers (Medium)](https://leetcode.com/problems/sum-of-two-integers/)
 - [ ] [191. Number of 1 Bits (Easy)](https://leetcode.com/problems/number-of-1-bits/)
 - [ ] [338. Counting Bits (Easy)](https://leetcode.com/problems/counting-bits/)
 - [ ] [268. Missing Number (Easy)](https://leetcode.com/problems/missing-number/)

@@ -62,4 +62,17 @@ from typing import List
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        pass
+        """
+        Pass over the array, recording target complements to each element in a
+        dictionary.
+
+        Time  : O(n)
+        Space : O(n)
+        """
+        complements = {}
+        for idx, x in enumerate(nums):
+            if x in complements:
+                return list((idx, complements[x]))
+            complements[target - x] = idx
+        return None
+

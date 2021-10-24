@@ -8,12 +8,12 @@ Software Engineer and Machine Learning Interview resources, for personal use.
 
 ### Leetcode Problems
 
-6/74
+7/74
 
-Arrays: 2/10
+Arrays: 3/10
 - [x] [1. Two Sum (Easy)](https://leetcode.com/problems/two-sum/)
 - [x] [121. Best Time to Buy and Sell Stock (Easy)](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
-- [ ] [217. Contains Duplicate (Easy)](https://leetcode.com/problems/contains-duplicate/)
+- [x] [217. Contains Duplicate (Easy)](https://leetcode.com/problems/contains-duplicate/)
 - [ ] [238. Product of Array Except Self (Medium)](https://leetcode.com/problems/product-of-array-except-self/)
 - [ ] [53. Maximum Subarray (Easy)](https://leetcode.com/problems/maximum-subarray/)
 - [ ] [152. Maximum Product Subarray (Medium)](https://leetcode.com/problems/maximum-product-subarray/)

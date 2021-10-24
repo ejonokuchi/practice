@@ -37,9 +37,34 @@
 #
 #
 
+import heapq
+from collections import defaultdict
 from typing import List
 
 
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        pass
+        """
+        Counts elements in a dictionary and iterates over the results with a min-heap.
+
+        Time  : O(n log k)
+        Space : O(n)
+
+        A simpler, though less interview-friendly implementation is:
+
+        def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+            return list(zip(*Counter(nums).most_common(k)))[0]
+        """
+        counts = defaultdict(int)
+        for x in nums:
+            counts[x] += 1
+
+        top_k = []
+        for x, count in counts.items():
+            if len(top_k) < k:
+                heapq.heappush(top_k, (count, x))
+            elif top_k[0][0] < count:
+                heapq.heappush(top_k, (count, x))
+                heapq.heappop(top_k)
+
+        return list(zip(*top_k))[1]

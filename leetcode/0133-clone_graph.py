@@ -99,6 +99,31 @@ class Node:
         self.neighbors = neighbors if neighbors is not None else []
 
 
+from collections import deque
+
+
 class Solution:
     def cloneGraph(self, node: Node) -> Node:
-        pass
+        """
+        Iterative BFS solution.
+
+        As we visit nodes, create copies for them in the new node mapping, and update
+        the copy's neighbors.
+
+        Time  : O(V + E)
+        Space : O(V + E)
+        """
+        if node is None:
+            return None
+
+        new_nodes = {node: Node(val=node.val)}
+        queue = deque([node])
+        while len(queue) > 0:
+            x = queue.popleft()
+            for neighbor in x.neighbors:
+                if neighbor not in new_nodes:
+                    new_nodes[neighbor] = Node(val=neighbor.val)
+                    queue.append(neighbor)
+                new_nodes[x].neighbors.append(new_nodes[neighbor])
+
+        return new_nodes[node]

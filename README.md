@@ -28,7 +28,7 @@ Binary:
 - [ ] [190. Reverse Bits (Easy)](https://leetcode.com/problems/reverse-bits/)
 
 Dynamic Programming:
-- [ ] [70. Climbing Stairs (Easy)](https://leetcode.com/problems/climbing-stairs/)
+- [x] [70. Climbing Stairs (Easy)](https://leetcode.com/problems/climbing-stairs/)
 - [ ] [322. Coin Change (Medium)](https://leetcode.com/problems/coin-change/)
 - [ ] [300. Longest Increasing Subsequence (Medium)](https://leetcode.com/problems/longest-increasing-subsequence/)
 - [ ] [1143. Longest Common Subsequence (Medium)](https://leetcode.com/problems/longest-common-subsequence/)

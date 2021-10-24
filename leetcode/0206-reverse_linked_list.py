@@ -61,4 +61,20 @@ from typing import Optional
 
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        pass
+        """
+        Traverse the list iteratively, using a temporary node to store the next node
+        while reversing the edges.
+
+        Time  : O(n)
+        Space : O(n)
+        """
+        previous = None
+        current = head
+        while current is not None:
+            # reverse edge
+            next_node = current.next
+            current.next = previous
+            # advance
+            previous = current
+            current = next_node
+        return previous

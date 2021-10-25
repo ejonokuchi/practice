@@ -67,8 +67,8 @@ Linked List: ✅⬜️⬜️⬜️⬜️⬜️
 - [ ] [19. Remove Nth Node From End of List (Medium)](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
 - [ ] [143. Reorder List (Medium)](https://leetcode.com/problems/reorder-list/)
 
-Matrix: ⬜️⬜️⬜️⬜️
-- [ ] [73. Set Matrix Zeroes (Medium)](https://leetcode.com/problems/set-matrix-zeroes/)
+Matrix: ✅⬜️⬜️⬜️
+- [x] [73. Set Matrix Zeroes (Medium)](https://leetcode.com/problems/set-matrix-zeroes/)
 - [ ] [54. Spiral Matrix (Medium)](https://leetcode.com/problems/spiral-matrix/)
 - [ ] [48. Rotate Image (Medium)](https://leetcode.com/problems/rotate-image/)
 - [ ] [79. Word Search (Medium)](https://leetcode.com/problems/word-search/)

@@ -61,4 +61,23 @@
 
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        pass
+        """
+        Slides a window over the string, recording the position of the last occurrence
+        of each character. Returns the maximum length of the window.
+
+        When a character is encountered whose position is in the current window, update
+        the left bound of the window.
+
+        Time  : O(n)
+        Space : O(n)
+        """
+        l, r = 0, 0
+        max_length = 0
+        last_pos = dict()
+        for idx, char in enumerate(s):
+            if char in last_pos and l <= last_pos[char]:
+                l = last_pos[char] + 1
+            last_pos[char] = idx
+            r = idx
+            max_length = max(max_length, r - l + 1)
+        return max_length

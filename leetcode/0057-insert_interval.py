@@ -81,4 +81,25 @@ class Solution:
     def insert(
         self, intervals: List[List[int]], newInterval: List[int]
     ) -> List[List[int]]:
-        pass
+        """
+        Split the intervals into three groups:
+        • Left, intervals before the new interval
+        • Overlap, intervals which overlap with the new interval (merge these)
+        • Right, intervals after the new interval
+
+        Return the concatenationn of the three groups.
+
+        Time  : O(n)
+        Space : O(1)
+        """
+        a, b = newInterval
+        L, R = [], []
+        for start, end in intervals:
+            if end < a:
+                L.append((start, end))
+            elif b < start:
+                R.append((start, end))
+            else:
+                a = min(start, a)
+                b = max(end, b)
+        return L + [[a, b]] + R

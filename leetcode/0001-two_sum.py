@@ -63,8 +63,8 @@ from typing import List
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         """
-        Pass over the array, recording target complements to each element in a
-        dictionary.
+        Uses a dictionary to record the complement of each element. Returns when an
+        element in the dictionary is found.
 
         Time  : O(n)
         Space : O(n)

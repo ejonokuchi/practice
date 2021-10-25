@@ -82,12 +82,12 @@ class Solution:
         self, intervals: List[List[int]], newInterval: List[int]
     ) -> List[List[int]]:
         """
-        Split the intervals into three groups:
+        Splits the intervals into three groups:
         • Left, intervals before the new interval
-        • Overlap, intervals which overlap with the new interval (merge these)
+        • Overlap, intervals which overlap with the new interval (these are merged)
         • Right, intervals after the new interval
 
-        Return the concatenationn of the three groups.
+        Return the concatenation of the three groups.
 
         Time  : O(n)
         Space : O(1)

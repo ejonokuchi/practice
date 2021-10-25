@@ -59,13 +59,14 @@ from typing import List
 class Solution:
     def setZeroes(self, matrix: List[List[int]]) -> None:
         """
-        Use sets to track the rows and columns that include zeroes.
-
-        Using a bit vector instead of a set would bring this to constant space, but it's
-        silly to write that in Python. Just use numpy.
+        Iterates over the matrix to find rows and columns with a zero, then clears all
+        of those rows and columns in subsequent iterations.
 
         Time  : O(nm)
         Space : O(n + m)
+
+        Note: using a bit vector instead of two sets would make this use only constant
+        space, but it's silly to write that in Python. Use numpy.
         """
         n, m = len(matrix), len(matrix[0])
         rows, cols = set(), set()

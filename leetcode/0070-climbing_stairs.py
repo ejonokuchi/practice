@@ -51,15 +51,15 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
         """
-        Fibonacci sequence, with only the final number required.
+        Implements a fibonacci sequence, saving only the final number.
 
         Recursion: S[i] = S[i - 1] + S[i - 2]
 
         Time  : O(n), where n is the value of the input
         Space : O(1)
         """
-        a = 1  # current
-        b = 0  # previous
+        a = 1
+        b = 0
         for _ in range(n):
             a, b = a + b, a
         return a

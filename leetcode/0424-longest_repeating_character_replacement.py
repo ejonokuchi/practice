@@ -47,7 +47,30 @@
 #
 #
 
+from collections import defaultdict
+
 
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
-        pass
+        """
+        Two-pointer approach. Maintains the count of all characters in the current
+        window, computing the number of replacements as the difference between the
+        window size and the count of the most frequent character in the window.
+
+        The number of unique characters is bound by the encoding used, so the counts
+        dictionary never grows larger than a constant, thus finding the max is O(1).
+
+        Time  : O(n)
+        Space : O(1)
+        """
+        window_counts = defaultdict(int)
+        max_length = 0
+        l = 0
+        for r in range(len(s)):
+            window_counts[s[r]] += 1
+            # (window_size - max_char_count_in_window) > k, means too many replacements
+            if r - l + 1 - max(window_counts.values()) > k:
+                window_counts[s[l]] -= 1
+                l += 1
+            max_length = max(max_length, r - l + 1)
+        return max_length

@@ -8,7 +8,7 @@ Software Engineer and Machine Learning Interview resources, for personal use.
 
 ### Leetcode Problems
 
-18/74.
+19/74.
 
 Arrays: ✅✅✅⬜️⬜️⬜️⬜️⬜️⬜️⬜️
 - [x] [1. Two Sum (Easy)](https://leetcode.com/problems/two-sum/)
@@ -73,9 +73,9 @@ Matrix: ✅✅⬜️⬜️
 - [ ] [48. Rotate Image (Medium)](https://leetcode.com/problems/rotate-image/)
 - [ ] [79. Word Search (Medium)](https://leetcode.com/problems/word-search/)
 
-String: ✅⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️
+String: ✅✅⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️
 - [x] [3. Longest Substring Without Repeating Characters (Medium)](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
-- [ ] [424. Longest Repeating Character Replacement (Medium)](https://leetcode.com/problems/longest-repeating-character-replacement/)
+- [x] [424. Longest Repeating Character Replacement (Medium)](https://leetcode.com/problems/longest-repeating-character-replacement/)
 - [ ] [76. Minimum Window Substring (Hard)](https://leetcode.com/problems/minimum-window-substring/)
 - [ ] [242. Valid Anagram (Easy)](https://leetcode.com/problems/valid-anagram/)
 - [ ] [49. Group Anagrams (Medium)](https://leetcode.com/problems/group-anagrams/)

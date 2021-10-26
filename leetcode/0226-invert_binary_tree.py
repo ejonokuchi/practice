@@ -57,4 +57,13 @@ from typing import Optional
 
 class Solution:
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
-        pass
+        """
+        Recursively inverts the sub-trees of root.
+
+        Time  : O(n)
+        Space : O(1)
+        """
+        if root is None:
+            return None
+        root.left, root.right = self.invertTree(root.right), self.invertTree(root.left)
+        return root

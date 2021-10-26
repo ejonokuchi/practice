@@ -62,11 +62,11 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         """
-        Slides a window over the string, recording the position of the last occurrence
-        of each character. Returns the maximum length of the window.
+        Slides a two pointer window over the string, recording the position of the last
+        occurrence of each character. Returns the maximum length of the window.
 
-        When a character is encountered whose position is in the current window, update
-        the left bound of the window.
+        When a character is encountered whose last position is in the current window,
+        update the left bound of the window.
 
         Time  : O(n)
         Space : O(n)

@@ -80,7 +80,7 @@ class Solution:
                          = -1               if i < c
                          = 1 + C[i - c]     if i >= c
 
-        Where the value of any C[i] is its minimum value over all coins c.
+        where the value of any C[i] is its minimum value over all coins c.
 
         Time  : O(nc), where n is the amount and c is the number of coins
         Space : O(n)

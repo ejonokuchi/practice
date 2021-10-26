@@ -60,4 +60,22 @@ class Solution:
     def mergeTwoLists(
         self, l1: Optional[ListNode], l2: Optional[ListNode]
     ) -> Optional[ListNode]:
-        pass
+        """
+        Creates a dummy head for the new list and merges the list by iteratively
+        selecting the lesser element of the two lists.
+
+        Time  : O(n)
+        Space : O(1)
+        """
+        dummy = current = ListNode()
+        while l1 is not None and l2 is not None:
+            if l1.val < l2.val:
+                current.next = l1
+                l1 = l1.next
+            else:
+                current.next = l2
+                l2 = l2.next
+            current = current.next
+
+        current.next = l1 if l2 is None else l2
+        return dummy.next

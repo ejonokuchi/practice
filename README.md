@@ -8,7 +8,7 @@ Software Engineer and Machine Learning Interview resources, for personal use.
 
 ### Leetcode Problems
 
-17/74.
+18/74.
 
 Arrays: ✅✅✅⬜️⬜️⬜️⬜️⬜️⬜️⬜️
 - [x] [1. Two Sum (Easy)](https://leetcode.com/problems/two-sum/)
@@ -59,9 +59,9 @@ Interval: ✅⬜️⬜️⬜️⬜️
 - [ ] [252. Meeting Rooms - Premium (Easy)](https://leetcode.com/problems/meeting-rooms/)
 - [ ] [253. Meeting Rooms II - Premium (Medium)](https://leetcode.com/problems/meeting-rooms-ii/)
 
-Linked List: ✅⬜️⬜️⬜️⬜️⬜️
+Linked List: ✅✅⬜️⬜️⬜️⬜️
 - [x] [206. Reverse Linked List (Easy)](https://leetcode.com/problems/reverse-linked-list/)
-- [ ] [141. Linked List Cycle (Easy)](https://leetcode.com/problems/linked-list-cycle/)
+- [x] [141. Linked List Cycle (Easy)](https://leetcode.com/problems/linked-list-cycle/)
 - [ ] [21. Merge Two Sorted Lists (Easy)](https://leetcode.com/problems/merge-two-sorted-lists/)
 - [ ] [23. Merge k Sorted Lists (Hard)](https://leetcode.com/problems/merge-k-sorted-lists/)
 - [ ] [19. Remove Nth Node From End of List (Medium)](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
@@ -93,7 +93,7 @@ Tree: ✅✅✅⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜�
 - [ ] [102. Binary Tree Level Order Traversal (Medium)](https://leetcode.com/problems/binary-tree-level-order-traversal/)
 - [ ] [297. Serialize and Deserialize Binary Tree (Hard)](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/)
 - [ ] [572. Subtree of Another Tree (Easy)](https://leetcode.com/problems/subtree-of-another-tree/)
-- [ ] [105. Construct Binary Tree from Preorder and Inorder Traversal(Medium)](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
+- [ ] [105. Construct Binary Tree from Preorder and Inorder Traversal (Medium)](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
 - [ ] [98. Validate Binary Search Tree (Medium)](https://leetcode.com/problems/validate-binary-search-tree/)
 - [ ] [230. Kth Smallest Element in a BST (Medium)](https://leetcode.com/problems/kth-smallest-element-in-a-bst/)
 - [ ] [235. Lowest Common Ancestor of a Binary Search Tree (Easy)](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/)

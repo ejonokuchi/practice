@@ -74,4 +74,20 @@ from typing import Optional
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
-        pass
+        """
+        Iteratively traverses the list and add nodes to a set.
+
+        Floyd loop detection (two pointers moving at different speeds) would be a
+        constant-space solution.
+
+        Time  : O(n)
+        Space : O(n)
+        """
+        seen = set()
+        node = head
+        while node is not None:
+            if node in seen:
+                return True
+            seen.add(node)
+            node = node.next
+        return False

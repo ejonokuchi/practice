@@ -45,4 +45,16 @@ from typing import List
 
 class Solution:
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
-        pass
+        """
+        Recursively returns the first row of the matrix, concatenated with the spiral
+        order of the transposed remaining matrix.
+
+        This is an improvement over my prior iterative solution, which was more
+        efficient but far less elegant.
+
+        Time  : O(nm)
+        Space : O(nm)
+        """
+        if len(matrix) == 0:
+            return []
+        return list(matrix[0]) + self.spiralOrder(list(zip(*matrix[1:]))[::-1])

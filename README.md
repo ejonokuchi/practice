@@ -8,7 +8,7 @@ Software Engineer and Machine Learning Interview resources, for personal use.
 
 ### Leetcode Problems
 
-19/74.
+20/74.
 
 Arrays: ✅✅✅⬜️⬜️⬜️⬜️⬜️⬜️⬜️
 - [x] [1. Two Sum (Easy)](https://leetcode.com/problems/two-sum/)
@@ -85,11 +85,11 @@ String: ✅✅⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️
 - [ ] [647. Palindromic Substrings (Medium)](https://leetcode.com/problems/palindromic-substrings/)
 - [ ] [271. Encode and Decode Strings - Premium (Medium)](https://leetcode.com/problems/encode-and-decode-strings/)
 
-Tree: ✅✅✅⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️
+Tree: ✅✅✅✅⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️
 - [x] [104. Maximum Depth of Binary Tree (Easy)](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
 - [x] [100. Same Tree (Easy)](https://leetcode.com/problems/same-tree/)
 - [x] [226. Invert Binary Tree (Easy)](https://leetcode.com/problems/invert-binary-tree/)
-- [ ] [124. Binary Tree Maximum Path Sum (Hard)](https://leetcode.com/problems/binary-tree-maximum-path-sum/)
+- [x] [124. Binary Tree Maximum Path Sum (Hard)](https://leetcode.com/problems/binary-tree-maximum-path-sum/)
 - [ ] [102. Binary Tree Level Order Traversal (Medium)](https://leetcode.com/problems/binary-tree-level-order-traversal/)
 - [ ] [297. Serialize and Deserialize Binary Tree (Hard)](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/)
 - [ ] [572. Subtree of Another Tree (Easy)](https://leetcode.com/problems/subtree-of-another-tree/)

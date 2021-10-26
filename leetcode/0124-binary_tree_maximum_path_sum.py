@@ -56,9 +56,35 @@ class TreeNode:
         self.right = right
 
 
-from typing import Optional
+from typing import Optional, Tuple
 
 
 class Solution:
     def maxPathSum(self, root: Optional[TreeNode]) -> int:
-        pass
+        """
+        Recursively traverses the tree, computing maximum path sums from the root of
+        each sub-tree, as well as the global maximum over any connected path.
+
+        Time  : O(n)
+        Space : O(1)
+        """
+        max_path = -float("inf")
+
+        def max_path_sum_rec(root: Optional[TreeNode]) -> int:
+            """Returns the maximum sum of any connected path ending at the root.
+
+            During traversal, updates the global maximum path sum, also considering
+            paths through the root, i.e. L -> root -> R.
+            """
+            nonlocal max_path
+            if root is None:
+                return 0
+
+            left_max_sum = max(0, max_path_sum_rec(root.left))
+            right_max_sum = max(0, max_path_sum_rec(root.right))
+
+            max_path = max(max_path, left_max_sum + root.val + right_max_sum)
+            return root.val + max(left_max_sum, right_max_sum)
+
+        max_path_sum_rec(root)
+        return max_path

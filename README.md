@@ -8,7 +8,7 @@ Software Engineer and Machine Learning Interview resources, for personal use.
 
 ### Leetcode Problems
 
-14/74.
+15/74.
 
 Arrays: ✅✅✅⬜️⬜️⬜️⬜️⬜️⬜️⬜️
 - [x] [1. Two Sum (Easy)](https://leetcode.com/problems/two-sum/)
@@ -29,9 +29,9 @@ Binary: ✅✅⬜️⬜️⬜️
 - [ ] [268. Missing Number (Easy)](https://leetcode.com/problems/missing-number/)
 - [ ] [190. Reverse Bits (Easy)](https://leetcode.com/problems/reverse-bits/)
 
-Dynamic Programming: ✅⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️
+Dynamic Programming: ✅✅⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️
 - [x] [70. Climbing Stairs (Easy)](https://leetcode.com/problems/climbing-stairs/)
-- [ ] [322. Coin Change (Medium)](https://leetcode.com/problems/coin-change/)
+- [x] [322. Coin Change (Medium)](https://leetcode.com/problems/coin-change/)
 - [ ] [300. Longest Increasing Subsequence (Medium)](https://leetcode.com/problems/longest-increasing-subsequence/)
 - [ ] [1143. Longest Common Subsequence (Medium)](https://leetcode.com/problems/longest-common-subsequence/)
 - [ ] [139. Word Break (Medium)](https://leetcode.com/problems/word-break/)

@@ -73,4 +73,22 @@ from typing import List
 
 class Solution:
     def coinChange(self, coins: List[int], amount: int) -> int:
-        pass
+        """
+        Unbounded knapsack problem.
+
+        Recursion:  C[i] = 0                if i == 0
+                         = -1               if i < c
+                         = 1 + C[i - c]     if i >= c
+
+        Where the value of any C[i] is its minimum value over all coins c.
+
+        Time  : O(nc), where n is the amount and c is the number of coins
+        Space : O(n)
+        """
+        # Use infinity as the invalid value instead of -1, so we can use min(C[i]).
+        C = [0] + ([float("inf")] * amount)
+        for c in coins:
+            for i in range(c, amount + 1):
+                C[i] = min(C[i], C[i - c] + 1)
+
+        return C[amount] if C[amount] != float("inf") else -1

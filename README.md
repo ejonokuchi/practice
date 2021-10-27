@@ -8,13 +8,13 @@ Software Engineer and Machine Learning Interview resources, for personal use.
 
 ### Leetcode Problems
 
-21/74.
+22/74.
 
-Arrays: ✅✅✅⬜️⬜️⬜️⬜️⬜️⬜️⬜️
+Arrays: ✅✅✅✅⬜️⬜️⬜️⬜️⬜️⬜️
 - [x] [1. Two Sum (Easy)](https://leetcode.com/problems/two-sum/)
 - [x] [121. Best Time to Buy and Sell Stock (Easy)](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
 - [x] [217. Contains Duplicate (Easy)](https://leetcode.com/problems/contains-duplicate/)
-- [ ] [238. Product of Array Except Self (Medium)](https://leetcode.com/problems/product-of-array-except-self/)
+- [x] [238. Product of Array Except Self (Medium)](https://leetcode.com/problems/product-of-array-except-self/)
 - [ ] [53. Maximum Subarray (Easy)](https://leetcode.com/problems/maximum-subarray/)
 - [ ] [152. Maximum Product Subarray (Medium)](https://leetcode.com/problems/maximum-product-subarray/)
 - [ ] [153. Find Minimum in Rotated Sorted Array (Medium)](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)

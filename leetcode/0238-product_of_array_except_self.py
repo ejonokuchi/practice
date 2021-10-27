@@ -49,4 +49,27 @@ from typing import List
 
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
-        pass
+        """
+        Computes the product of the entire list, not including zeros. Depending on the
+        number of zeros encountered, returns one of following lists:
+        • num_zeros == 0: product / x
+        • num_zeros == 1: product if x == 0, else 0
+        • num_zeros  > 1: 0
+
+        Time  : O(n)
+        Space : O(1)
+        """
+        product = 1
+        num_zeros = 0
+        for x in nums:
+            if x == 0:
+                num_zeros += 1
+                if num_zeros > 1:
+                    return [0] * len(nums)
+            else:
+                product *= x
+
+        if num_zeros == 0:
+            return [(product // x) for x in nums]
+        else:
+            return [product if x == 0 else 0 for x in nums]

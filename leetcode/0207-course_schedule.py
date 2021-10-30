@@ -56,9 +56,40 @@
 #
 #
 
+from collections import defaultdict
 from typing import List
 
 
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
-        pass
+        """
+        Builds a directed graph of course dependencies and runs depth-first search to
+        find any cycles.
+
+        Uses a recursive DFS function which maintains the current path as a set, and
+        updates the global set of visited nodes as they are encountered.
+
+        Time  : O(n)
+        Space : O(n)
+        """
+        # Build graph as an adjacency list
+        C = defaultdict(list)
+        for course, prereq in prerequisites:
+            C[prereq].append(course)
+
+        # Run DFS to detect cycles
+        # Start from each prerequisite, in case there are unconnected components
+        visited = set()
+
+        def has_cycle(v, path):
+            nonlocal visited
+            if v in path:
+                return True
+            if v in visited:
+                return False
+            visited.add(v)
+            if v in C:
+                return any(has_cycle(v2, path.union({v})) for v2 in C[v])
+            return False
+
+        return not any(has_cycle(course, set()) for course in C)

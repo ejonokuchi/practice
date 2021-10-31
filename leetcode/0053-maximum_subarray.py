@@ -58,4 +58,19 @@ from typing import List
 
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        pass
+        """
+        Runs Kadane's algorithm on the input array.
+
+        Current sum is the maximum continuous sum up to the current array index.
+        At each step, if the current sum is negative, the current element is larger
+        without it. If the current sum is positive, the current element is added to it.
+
+        Time  : O(n)
+        Space : O(n)
+        """
+        current_sum = max_sum = nums[0]
+        for x in nums[1:]:
+            current_sum = max(x, current_sum + x)
+            max_sum = max(max_sum, current_sum)
+        return max_sum
+

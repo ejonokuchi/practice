@@ -56,9 +56,39 @@
 #
 #
 
+from collections import deque
 from typing import List
 
 
 class Solution:
     def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]:
-        pass
+        """
+        Runs BFS from each coast to determine the sets of cells with rainflow to each
+        coast. Returns the intersection of the two sets.
+
+        Time  : O(nm)
+        Space : O(nm)
+        """
+        n, m = len(heights), len(heights[0])
+
+        def can_flow_to(indices):
+            """BFS from a set of indices to all equal or uphill neighbors."""
+            visited = set()
+            queue = deque(indices)
+            while len(queue) > 0:
+                r, c = queue.popleft()
+                visited.add((r, c))
+                for i, j in ((r - 1, c), (r + 1, c), (r, c - 1), (r, c + 1)):
+                    if (
+                        0 <= i < n
+                        and 0 <= j < m
+                        and (i, j) not in visited
+                        and heights[i][j] >= heights[r][c]
+                    ):
+                        queue.append((i, j))
+            return visited
+
+        pacific_coast = [(i, 0) for i in range(n)] + [(0, j) for j in range(m)]
+        atlantic_coast = [(i, m - 1) for i in range(n)] + [(n - 1, j) for j in range(m)]
+        return list(can_flow_to(pacific_coast) & can_flow_to(atlantic_coast))
+

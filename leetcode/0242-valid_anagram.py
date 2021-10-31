@@ -36,7 +36,30 @@
 #
 #
 
+from collections import defaultdict
+
 
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        pass
+        """
+        Creates a character count dictionary, adding for characters of s and subtracting
+        for characters of t. If all counts are equal to 0, the strings are anagrams.
+
+        Time  : O(n)
+        Space : O(n)
+
+        Using built-in Counter, this function can reduced to:
+        ```
+        def isAnagram(self, s: str, t: str) -> bool:
+            return len(s) == len(t) and Counter(s) == Counter(t)
+        ```
+        """
+        if len(s) != len(t):
+            return False
+
+        counts = defaultdict(int)
+        for i in range(len(s)):
+            counts[s[i]] += 1
+            counts[t[i]] -= 1
+
+        return all(x == 0 for x in counts.values())

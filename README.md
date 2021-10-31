@@ -8,7 +8,7 @@ Software Engineer and Machine Learning Interview resources, for personal use.
 
 ### Leetcode Problems
 
-26/74.
+27/74.
 
 Arrays: ✅✅✅✅✅⬜️⬜️⬜️⬜️⬜️
 - [x] [1. Two Sum (Easy)](https://leetcode.com/problems/two-sum/)
@@ -22,10 +22,10 @@ Arrays: ✅✅✅✅✅⬜️⬜️⬜️⬜️⬜️
 - [ ] [15. 3Sum (Medium)](https://leetcode.com/problems/3sum/)
 - [ ] [11. Container With Most Water (Medium)](https://leetcode.com/problems/container-with-most-water/)
 
-Binary: ✅✅⬜️⬜️⬜️
+Binary: ✅✅✅⬜️⬜️
 - [x] [371. Sum of Two Integers (Medium)](https://leetcode.com/problems/sum-of-two-integers/)
 - [x] [191. Number of 1 Bits (Easy)](https://leetcode.com/problems/number-of-1-bits/)
-- [ ] [338. Counting Bits (Easy)](https://leetcode.com/problems/counting-bits/)
+- [x] [338. Counting Bits (Easy)](https://leetcode.com/problems/counting-bits/)
 - [ ] [268. Missing Number (Easy)](https://leetcode.com/problems/missing-number/)
 - [ ] [190. Reverse Bits (Easy)](https://leetcode.com/problems/reverse-bits/)
 

@@ -65,4 +65,23 @@ from typing import List
 
 class Solution:
     def countBits(self, n: int) -> List[int]:
-        pass
+        """
+        Sets bit counts iteratively:
+        • For any even number x, bin(x) is the same as bin(x/2), but with a trailing 0.
+        • For any odd number x, bin(x) is the same as bin(x//2), but with a trailing 1.
+
+        Examples:
+        • 6  => 110     3  => 11
+        • 25 => 11001   12 => 1100
+
+        Recursion:
+        B[x] = B[x // 2]        if x is even
+             = B[x // 2] + 1    if x is odd
+
+        Time  : O(n)
+        Space : O(n)
+        """
+        B = [0] * (n + 1)
+        for x in range(0, n + 1):
+            B[x] = B[x >> 1] + x % 2
+        return B

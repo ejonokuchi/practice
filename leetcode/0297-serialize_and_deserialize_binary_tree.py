@@ -73,14 +73,45 @@ class TreeNode(object):
 
 class Codec:
     def serialize(self, root: TreeNode) -> str:
-        """Encodes a tree to a single string.
+        """Returns a pre-order string encoding of a tree, with `.` representing None.
+
+        Time  : O(n)
+        Space : O(n)
+
+        For example, given tree:
+               1
+            2
+              3
+
+        serialize(root)
+        >>> '1 2 . 3 .'
         """
-        pass
+        if root is None:
+            return "."
+        return " ".join(
+            [str(root.val), self.serialize(root.left), self.serialize(root.right)]
+        )
 
     def deserialize(self, data: str) -> TreeNode:
-        """Decodes your encoded data to tree.
+        """Returns the full tree encoded by the serialized string.
+
+        Since the encoding is a full tree including leaf nodes, a greedy, recursive
+        pre-order traversal will build the full tree.
+
+        Time  : O(n)
+        Space : O(n)
         """
-        pass
+
+        def deserialize_rec(values):
+            val = next(values)
+            if val == ".":
+                return None
+            node = TreeNode(val)
+            node.left = deserialize_rec(values)
+            node.right = deserialize_rec(values)
+            return node
+
+        return deserialize_rec(iter(data.split()))
 
 
 # Your Codec object will be instantiated and called as such:

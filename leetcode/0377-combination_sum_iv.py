@@ -63,4 +63,25 @@ from typing import List
 
 class Solution:
     def combinationSum4(self, nums: List[int], target: int) -> int:
-        pass
+        """
+        Builds the number of sums iteratively.
+
+        C[i] = x indicates that there are x ways to reach target i. For each reachable
+        index i, add C[i] to each index reachable from i.
+
+        Recursion:
+           C[i] = sum(C[i - x] for x in nums)
+
+        Time  : O(tn), where t is the value of the target
+        Space : O(t)
+
+        Note: this counts permutations, not combinations. The question is misleading.
+        """
+        C = [1] + ([0] * target)
+        for i in range(target + 1):
+            if C[i] == 0:
+                continue
+            for x in nums:
+                if i + x <= target:
+                    C[i + x] += C[i]
+        return C[target]

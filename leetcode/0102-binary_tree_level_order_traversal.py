@@ -53,9 +53,27 @@ class TreeNode:
         self.right = right
 
 
+from collections import deque
 from typing import List, Optional
 
 
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
-        pass
+        """
+        Traverses the tree by level, using a list comprehension to find all non-null
+        children of the current level.
+
+        Time  : O(n)
+        Space : O(n)
+        """
+        traversal = deque([])
+        level = [root]
+        while root is not None and len(level) > 0:
+            traversal.append([node.val for node in level])
+            level = [
+                child
+                for node in level
+                for child in (node.left, node.right)
+                if child is not None
+            ]
+        return traversal

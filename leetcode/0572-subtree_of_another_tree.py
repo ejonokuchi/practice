@@ -58,4 +58,31 @@ from typing import Optional
 
 class Solution:
     def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
-        pass
+        """
+        Converts each tree to a pre-order string encoding, and checks if the subRoot
+        encoding appears anywhere in the root encoding.
+
+        Time  : O(n) avg, O(nm) worst-case
+        Space : O(n)
+
+        Notes
+        -----
+        The naive approach to this question is the following recursive check:
+            return (
+                isSameTree(tree, sub_tree)
+                or isSameTree(tree.left, sub_tree)
+                or isSameTree(tree.right, sub_tree)
+            )
+
+        A linear time complexity can be guaranteed by either using a linear-time
+        substring search algorithm instead of (string in text), or by using a sub-tree
+        hashing approach, where sub-tree hashes are cached.
+        """
+        return self.serialize(subRoot) in self.serialize(root)
+
+    def serialize(self, root: TreeNode) -> str:
+        if root is None:
+            return "X"
+        return "^{}{}{}$".format(
+            str(root.val), self.serialize(root.left), self.serialize(root.right),
+        )

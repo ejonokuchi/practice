@@ -63,4 +63,25 @@
 
 class Solution:
     def longestCommonSubsequence(self, text1: str, text2: str) -> int:
-        pass
+        """
+        Bottom-up DP approach. Builds a table of values, LCS, such that LCS[i, j] is the
+        length of the longest common subsequence between text1[:i] and text2[:j].
+
+        Recursion:
+        LCS[i, j] = 1 + LCS[i - 1, j - 1]               if text1[i] == text2[j]
+                    max(LCS[i - 1, j], LCS[i, j - 1])   else
+
+        Time  : O(nm)
+        Space : O(nm)
+        """
+        n, m = len(text1), len(text2)
+        LCS = [[0 for _ in range(m + 1)] for _ in range(n + 1)]
+
+        for i in range(1, n + 1):
+            for j in range(1, m + 1):
+                if text1[i - 1] == text2[j - 1]:
+                    LCS[i][j] = 1 + LCS[i - 1][j - 1]
+                else:
+                    LCS[i][j] = max(LCS[i - 1][j], LCS[i][j - 1])
+
+        return max(map(max, LCS))

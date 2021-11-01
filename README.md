@@ -8,7 +8,7 @@ Software Engineer and Machine Learning Interview resources, for personal use.
 
 ### Leetcode Problems
 
-30/74.
+31/74.
 
 Arrays: ✅✅✅✅✅⬜️⬜️⬜️⬜️⬜️
 - [x] [1. Two Sum (Easy)](https://leetcode.com/problems/two-sum/)
@@ -52,9 +52,9 @@ Graph: ✅✅✅⬜️⬜️⬜️⬜️⬜️
 - [ ] [261. Graph Valid Tree - Premium (Medium)](https://leetcode.com/problems/graph-valid-tree/)
 - [ ] [323. Number of Connected Components in an Undirected Graph - Premium (Medium)](https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/)
 
-Interval: ✅⬜️⬜️⬜️⬜️
+Interval: ✅✅⬜️⬜️⬜️
 - [x] [57. Insert Interval (Medium)](https://leetcode.com/problems/insert-interval/)
-- [ ] [56. Merge Intervals (Medium)](https://leetcode.com/problems/merge-intervals/)
+- [x] [56. Merge Intervals (Medium)](https://leetcode.com/problems/merge-intervals/)
 - [ ] [435. Non-overlapping Intervals (Medium)](https://leetcode.com/problems/non-overlapping-intervals/)
 - [ ] [252. Meeting Rooms - Premium (Easy)](https://leetcode.com/problems/meeting-rooms/)
 - [ ] [253. Meeting Rooms II - Premium (Medium)](https://leetcode.com/problems/meeting-rooms-ii/)

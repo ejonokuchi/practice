@@ -44,9 +44,23 @@
 #
 #
 
+from collections import deque
 from typing import List
 
 
 class Solution:
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
-        pass
+        """
+        Iterates over the intervals, sorted by their start value. If the next interval
+        overlaps with the previous interval, merge it. Otherwise, add it.
+
+        Time  : O(n log n)
+        Space : O(n)
+        """
+        merged = deque([])
+        for start, end in sorted(intervals, key=lambda x: x[0]):
+            if len(merged) > 0 and merged[-1][1] >= start:
+                merged[-1][1] = max(merged[-1][1], end)
+            else:
+                merged.append([start, end])
+        return list(merged)

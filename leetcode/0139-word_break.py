@@ -63,4 +63,29 @@ from typing import List
 
 class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> bool:
-        pass
+        """
+        Bottom-up DP approach. Builds a boolean array B, such that B[i] = True
+        indicates the substring s[:i] can be built.
+
+        Recursion: consider a window (l, r) over string s.
+
+        B[r] = True     if B[l] == True and s[l:r] is a word, for any l < r
+               False
+
+        where B[0] is initialized to True.
+
+        Time  : O(n^2 + m)
+        Space : O(m)
+
+        Some minor optimizations can be made regarding the set of windows (l, r) to
+        consider. For example, there is no need to check a window if it is smaller than
+        the smallest valid word.
+        """
+        words = set(wordDict)
+
+        B = [False] * (len(s) + 1)
+        B[0] = True
+        for r in range(1, len(s) + 1):
+            B[r] = any(B[l] and s[l:r] in words for l in range(r))
+
+        return B[-1]

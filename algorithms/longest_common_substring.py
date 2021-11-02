@@ -26,12 +26,12 @@ def longest_common_subsequence(A: str, B: str) -> int:
     """
     n, m = len(A), len(B)
     LCS = [["" for _ in range(m + 1)] for _ in range(n + 1)]
-    for i in range(1, n + 1):
-        for j in range(1, m + 1):
-            if A[i - 1] == B[j - 1]:
-                LCS[i][j] = LCS[i - 1][j - 1] + A[i - 1]
+    for i in range(n):
+        for j in range(m):
+            if A[i] == B[j]:
+                LCS[i + 1][j + 1] = LCS[i][j] + A[i]
             else:
-                LCS[i][j] = max((LCS[i - 1][j], LCS[i][j - 1]), key=len)
+                LCS[i + 1][j + 1] = max((LCS[i + 1][j], LCS[i][j + 1]), key=len)
 
     return LCS[-1][-1]
 
@@ -54,10 +54,10 @@ def longest_common_substring(A: str, B: str) -> int:
     """
     n, m = len(A), len(B)
     LCS = [["" for _ in range(m + 1)] for _ in range(n + 1)]
-    for i in range(1, n + 1):
-        for j in range(1, m + 1):
-            if A[i - 1] == B[j - 1]:
-                LCS[i][j] = LCS[i - 1][j - 1] + A[i - 1]
+    for i in range(n):
+        for j in range(m):
+            if A[i] == B[j]:
+                LCS[i + 1][j + 1] = LCS[i][j] + A[i]
 
     argmax_len = partial(max, key=len)
     return argmax_len(map(argmax_len, LCS))

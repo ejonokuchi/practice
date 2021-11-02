@@ -59,4 +59,18 @@ from typing import List
 
 class Solution:
     def eraseOverlapIntervals(self, intervals: List[List[int]]) -> int:
-        pass
+        """
+        Sorts the intervals by increasing end value, and greedily keeps intervals which
+        start at or after the current end value.
+
+        Time  : O(n log n)
+        Space : O(1)
+        """
+        current_end = float("-inf")
+        num_deleted = 0
+        for start, end in sorted(intervals, key=lambda i: i[1]):
+            if start >= current_end:
+                current_end = end
+            else:
+                num_deleted += 1
+        return num_deleted

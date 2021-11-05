@@ -6,7 +6,7 @@ Linear time algorithms for efficient substring search.
 """
 
 
-def find_substring(S: str, pattern: str) -> int:
+def find_substring_rk(S: str, pattern: str) -> int:
     """
     Rabin-Karp algorithm, based on a rolling hash. Returns the index of the pattern in
     the string to search, S. If the pattern is not found, returns -1.
@@ -69,31 +69,84 @@ class RollingHash:
         return
 
 
+def find_substring_kmp(S: str, pattern: str) -> int:
+    """
+    Knuth-Morris-Pratt (KMP) algorithm for linear-time substring search.
+
+    Pre-computes a prefix array P for the pattern, where P[i] = x indicates that
+    pattern[i] is preceded by a prefix of pattern of length x. When matching the pattern
+    against the string S, if a mismatch is found, we can continue matching from the
+    length of this prefix.
+
+    For example, given:
+              S = "abcacabc"
+        pattern = "abcab"
+              P =  00012
+
+    From i = 0, there is a near match, but S[4] = c while pattern[4] = b. In the naive
+    approach, we restart matching from i = 2. However, in KMP, since the prior prefix
+    was 1 (i.e. P[3] = 1), we can continue from i = 4 with the current match set to
+    pattern[1]. This results in a single iteration over S.
+
+    Time  : O(n)
+    Space : O(m)
+    """
+    n, m = len(S), len(pattern)
+
+    # Compute prefix table P
+    P = [0] * m
+    j = 0
+    for i in range(1, m):
+        while pattern[i] != pattern[j] and j > 0:
+            j = P[j - 1]
+        if pattern[i] == pattern[j]:
+            j += 1
+            P[i] = j
+
+    # Iterate over S
+    j = 0
+    for i in range(n):
+        if S[i] == pattern[j]:
+            if j == m - 1:
+                return i - j
+            j += 1
+        else:
+            j = P[j - 1]
+            if S[i] == pattern[j]:
+                j += 1
+    return -1
+
+
 def test_find_substring_no_match():
     S = "My name is Evan"
     pattern = "hello there"
-    assert find_substring(S, pattern) == S.find(pattern)
+    assert find_substring_rk(S, pattern) == S.find(pattern)
+    assert find_substring_kmp(S, pattern) == S.find(pattern)
 
 
 def test_find_substring_near_match():
     S = "Hello there, my name is Evan"
     pattern = "hello there"
-    assert find_substring(S, pattern) == S.find(pattern)
+    assert find_substring_rk(S, pattern) == S.find(pattern)
+    assert find_substring_kmp(S, pattern) == S.find(pattern)
 
 
 def test_find_substring_one_char():
     S = "My name is Evan"
     pattern = "e"
-    assert find_substring(S, pattern) == S.find(pattern)
+    assert find_substring_rk(S, pattern) == S.find(pattern)
+    assert find_substring_kmp(S, pattern) == S.find(pattern)
 
 
 def test_find_substring_one_match():
     S = "My name is Evan, hello there!"
     pattern = "hello there"
-    assert find_substring(S, pattern) == S.find(pattern)
+    assert find_substring_rk(S, pattern) == S.find(pattern)
+    assert find_substring_kmp(S, pattern) == S.find(pattern)
 
 
 def test_find_substring_two_matches():
     S = "My name is Evan, hello there! Hi. Hello there!"
     pattern = "hello there"
-    assert find_substring(S, pattern) == S.find(pattern)
+    assert find_substring_rk(S, pattern) == S.find(pattern)
+    assert find_substring_kmp(S, pattern) == S.find(pattern)

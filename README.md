@@ -8,7 +8,7 @@ Software Engineer and Machine Learning Interview resources, for personal use.
 
 ### Leetcode Problems
 
-38/75.
+39/75.
 
 Arrays: ✅✅✅✅✅⬜️⬜️⬜️⬜️⬜️
 - [x] [1. Two Sum (Easy)](https://leetcode.com/problems/two-sum/)
@@ -101,9 +101,9 @@ Tree: ✅✅✅✅✅✅✅⬜️⬜️⬜️⬜️⬜️⬜️⬜️
 - [ ] [211. Design Add and Search Words Data Structure (Medium)](https://leetcode.com/problems/add-and-search-word-data-structure-design/)
 - [ ] [212. Word Search II (Hard)](https://leetcode.com/problems/word-search-ii/)
 
-Heap: ✅⬜️
+Heap: ✅✅
 - [x] [347. Top K Frequent Elements (Medium)](https://leetcode.com/problems/top-k-frequent-elements/)
-- [ ] [295. Find Median from Data Stream (Hard)](https://leetcode.com/problems/find-median-from-data-stream/)
+- [x] [295. Find Median from Data Stream (Hard)](https://leetcode.com/problems/find-median-from-data-stream/)
 
 Bonus: ⬜️
 - [ ] [741. Cherry Pickup (Hard)](https://leetcode.com/problems/cherry-pickup/)

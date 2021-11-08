@@ -72,16 +72,53 @@
 #
 #
 
+import heapq
+
 
 class MedianFinder:
+    """
+    Supports median-finding from a stream of data via a min-heap for values higher than
+    the median and a max-heap for values lower than the median.
+
+    To make the median calculation simpler, we maintain the invariant that the length
+    of the hi-heap is always >= the length of the lo-heap.
+
+    Space : O(n)
+
+    Note: the follow-up question can be solved in linear time by maintaining an array of
+    size 101, where each element represents the count of that integer seen so far. To
+    compute the median, traverse the array until half of the total elements have been
+    seen.
+    """
+
     def __init__(self):
-        pass
+        self.heaps = [], []
 
     def addNum(self, num: int) -> None:
-        pass
+        """
+        Adds a number to the two internal heaps.
+
+        A push-pop to the hi-heap followed by a push to the lo-heap ensures that the
+        two heaps are non-overlapping. Then, we ensure the invariant has not been
+        broken, rebalancing the heaps accordingly.
+
+        Time  : O(log n)
+        """
+        lo, hi = self.heaps
+        heapq.heappush(lo, -heapq.heappushpop(hi, num))
+        if len(hi) < len(lo):
+            heapq.heappush(hi, -heapq.heappop(lo))
 
     def findMedian(self) -> float:
-        pass
+        """
+        Returns the median of the two heaps.
+
+        Time  : O(1)
+        """
+        lo, hi = self.heaps
+        if len(hi) > len(lo):
+            return hi[0]
+        return (hi[0] - lo[0]) / 2
 
 
 # Your MedianFinder object will be instantiated and called as such:

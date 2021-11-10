@@ -40,9 +40,22 @@
 #
 #
 
+from collections import defaultdict
 from typing import List
 
 
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        pass
+        """
+        Sorts each string and adds it to the matching group. For small strings, this
+        is faster than counting characters in each string and checking the counts.
+
+        Time  : O(n * m log m)
+        Space : O(n * m)
+
+        where n is the list of strings, and m is the length of the longest string.
+        """
+        string_sets = defaultdict(list)
+        for s in strs:
+            string_sets["".join(sorted(s))].append(s)
+        return list(string_sets.values())

@@ -10,9 +10,10 @@ Standard libraries only.
 import heapq
 import math
 from collections import Counter
+from typing import List
 
 
-def compute_distance(A, B):
+def compute_distance(A: List[int], B: List[int]) -> List[int]:
     """Compute the Euclidean distance between A and B."""
     return math.sqrt(sum((a - b) ** 2 for a, b in zip(A, B)))
 
@@ -39,11 +40,11 @@ class KNeighborsClassifier:
     def __init__(self, k: int = 3):
         self.k = k
 
-    def train(self, X, Y):
+    def train(self, X: List[List[int]], Y: List[int]):
         self.X = X
         self.Y = Y
 
-    def classify(self, x):
+    def classify(self, x: List[int]) -> int:
         distances = [compute_distance(x, neighbor) for neighbor in self.X]
         k_neighbor_heap = []
         for idx, d in enumerate(distances):

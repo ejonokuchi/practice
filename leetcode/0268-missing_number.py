@@ -76,4 +76,26 @@ from typing import List
 
 class Solution:
     def missingNumber(self, nums: List[int]) -> int:
-        pass
+        """
+        Returns the missing value by computing the total XOR result over all indices and
+        values.
+
+        For any number x and y: x = x ^ y ^ y. If we compute a total XOR over all
+        indices and values, the missing value must be left.
+
+        Time  : O(n)
+        Space : O(1)
+
+        Notes
+        -----
+        Another way to solve this question without bit manipulation is by observing that
+        the sum of integers from 0 to n is given by: (n) * (n + 1) / 2.
+
+        If we subtract the sum of the array from this value, the difference is the
+        missing number.
+        """
+        n = len(nums)
+        total_xor = 0 ^ n
+        for idx, x in enumerate(nums):
+            total_xor = total_xor ^ idx ^ x
+        return total_xor

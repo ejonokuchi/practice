@@ -8,7 +8,7 @@ Software Engineer and Machine Learning Interview resources, for personal use.
 
 ### Leetcode Problems
 
-43/75.
+44/75.
 
 Arrays: ✅✅✅✅✅✅⬜️⬜️⬜️⬜️
 - [x] [1. Two Sum (Easy)](https://leetcode.com/problems/two-sum/)
@@ -29,7 +29,7 @@ Binary: ✅✅✅✅⬜️
 - [x] [268. Missing Number (Easy)](https://leetcode.com/problems/missing-number/)
 - [ ] [190. Reverse Bits (Easy)](https://leetcode.com/problems/reverse-bits/)
 
-Dynamic Programming: ✅✅✅✅✅✅✅⬜️⬜️⬜️⬜️
+Dynamic Programming: ✅✅✅✅✅✅✅✅⬜️⬜️⬜️
 - [x] [70. Climbing Stairs (Easy)](https://leetcode.com/problems/climbing-stairs/)
 - [x] [322. Coin Change (Medium)](https://leetcode.com/problems/coin-change/)
 - [x] [300. Longest Increasing Subsequence (Medium)](https://leetcode.com/problems/longest-increasing-subsequence/)
@@ -37,7 +37,7 @@ Dynamic Programming: ✅✅✅✅✅✅✅⬜️⬜️⬜️⬜️
 - [x] [139. Word Break (Medium)](https://leetcode.com/problems/word-break/)
 - [x] [377. Combination Sum IV (Medium)](https://leetcode.com/problems/combination-sum-iv/)
 - [x] [198. House Robber (Medium)](https://leetcode.com/problems/house-robber/)
-- [ ] [213. House Robber II (Medium)](https://leetcode.com/problems/house-robber-ii/)
+- [x] [213. House Robber II (Medium)](https://leetcode.com/problems/house-robber-ii/)
 - [ ] [91. Decode Ways (Medium)](https://leetcode.com/problems/decode-ways/)
 - [ ] [62. Unique Paths (Medium)](//leetcode.com/problems/unique-paths/)
 - [ ] [55. Jump Game (Medium)](https://leetcode.com/problems/jump-game/)

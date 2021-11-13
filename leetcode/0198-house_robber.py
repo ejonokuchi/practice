@@ -73,7 +73,7 @@ class Solution:
         store the last two values at any given point.
 
         Time  : O(n)
-        Space : O(n)
+        Space : O(1)
         """
         n = len(nums)
         previous, current = 0, 0  # M[i - 2], M[i - 1]

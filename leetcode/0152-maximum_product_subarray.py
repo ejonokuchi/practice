@@ -52,4 +52,25 @@ from typing import List
 
 class Solution:
     def maxProduct(self, nums: List[int]) -> int:
-        pass
+        """
+        Returns the maximum continuous product with a single pass, maintaining the
+        values of the current mininum and maximum, and the global maximum.
+
+        The current min and max are both kept, since negative numbers will increase the
+        product as long as they are considered in an even number.
+
+        For any element x in the input array, the current min and max must be one of:
+        • the current max * x
+        • the current min * x
+        • x
+
+        Time  : O(n)
+        Space : O(1)
+        """
+        global_max = nums[0]
+        cmin, cmax = nums[0], nums[0]
+        for x in nums[1:]:
+            current_vals = [x, cmin * x, cmax * x]
+            cmin, cmax = min(current_vals), max(current_vals)
+            global_max = max(global_max, cmax)
+        return global_max

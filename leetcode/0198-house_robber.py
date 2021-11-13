@@ -56,4 +56,27 @@ from typing import List
 
 class Solution:
     def rob(self, nums: List[int]) -> int:
-        pass
+        """
+        Returns the maximum amount obtained by robbing houses under the condition that
+        adjacent houses can't be robbed.
+
+        Recursion:
+
+        M[i] = nums[0]                  if i == 0
+             = max(nums[0], nums[1])    if i == 1
+             = max(                     else
+                 M[i - 2] + nums[i],
+                 M[i - 1],
+             )
+
+        Since we never reference values further back than M[i - 2], we only need to
+        store the last two values at any given point.
+
+        Time  : O(n)
+        Space : O(n)
+        """
+        n = len(nums)
+        previous, current = 0, 0  # M[i - 2], M[i - 1]
+        for i in range(n):
+            previous, current = current, max(previous + nums[i], current)
+        return current

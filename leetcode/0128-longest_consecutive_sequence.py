@@ -48,4 +48,22 @@ from typing import List
 
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
-        pass
+        """
+        Returns the longest consecutive sequence of numbers in the input array.
+
+        Creates a set from the input array. For each element x which is the lowest
+        number in a consecutive sequence (i.e. x - 1 is not present), count the number
+        of consecutive elements starting from x.
+
+        Time  : O(n)
+        Space : O(n)
+        """
+        S = set(nums)
+        max_count = 0
+        for x in S:
+            if x - 1 not in S:
+                y = x + 1
+                while y in S:
+                    y += 1
+                max_count = max(max_count, y - x)
+        return max_count

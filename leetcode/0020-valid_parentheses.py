@@ -67,7 +67,26 @@
 #
 #
 
+from collections import deque
+
 
 class Solution:
     def isValid(self, s: str) -> bool:
-        pass
+        """
+        Checks pairs with a stack of parentheses, ensuring the most recent parenthesis
+        is closed by it's matching character. By the end of the string, there should be
+        nothing in the stack.
+
+        Time  : O(n)
+        Space : O(n)
+        """
+        matching_char = {")": "(", "]": "[", "}": "{"}
+        opened = deque([])
+        for c in s:
+            if len(opened) == 0 or c in {"(", "[", "{"}:
+                opened.append(c)
+            elif c in matching_char and opened[-1] == matching_char[c]:
+                opened.pop()
+            else:
+                return False
+        return len(opened) == 0

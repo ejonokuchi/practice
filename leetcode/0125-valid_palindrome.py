@@ -44,4 +44,28 @@
 
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        pass
+        """
+        Two pointer solution. Starts from the beginning and end of the input string s,
+        checking the next alpha-numeric value at each point until all characters have
+        been compared.
+
+        Time  : O(n)
+        Space : O(1)
+
+        This can also be solved in one-line with O(n) space as:
+
+        def isPalindrome(self, s: str) -> bool:
+            chars = "".join(c for c in s.lower() if c.isalnum())
+            return chars == chars[::-1]
+
+        """
+        l, r = 0, len(s) - 1
+        while l < r:
+            while l < r and not s[l].isalnum():
+                l += 1
+            while l < r and not s[r].isalnum():
+                r -= 1
+            if s[l].lower() != s[r].lower():
+                return False
+            l, r = l + 1, r - 1
+        return True

@@ -59,12 +59,26 @@
 #
 #
 
+import math
 from typing import List
 
 
 class Solution:
     def rotate(self, matrix: List[List[int]]) -> None:
         """
-        Do not return anything, modify matrix in-place instead.
+        From each starting point in the upper-left quadrant of the matrix, rotates each
+        of the four corresponding elements.
+
+        Time  : O(n)
+        Space : O(1)
         """
-        pass
+        n = len(matrix)
+        k = math.ceil(n / 2)
+        for i in range(k):
+            for j in range(n - k):
+                temp = matrix[i][j]
+                for _ in range(4):
+                    a, b = j, n - i - 1
+                    matrix[a][b], temp = temp, matrix[a][b]
+                    i, j = a, b
+        return

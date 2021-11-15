@@ -32,9 +32,28 @@
 #
 #
 
+import heapq
 from typing import List
 
 
 class Solution:
     def minMeetingRooms(self, intervals: List[List[int]]) -> int:
-        pass
+        """
+        Sorts the intervals by start time, and uses a min-heap to represent current
+        meeting rooms.
+
+        Upon observing a new meeting, check the current meeting with the earliest end
+        time. If the new meeting starts before this meeting ends, add a new meeting
+        room. Otherwise, re-use the room from the earliest-end meeting.
+
+        Time  : O(n log n)
+        Space : O(1)
+        """
+        intervals.sort()
+        meetings = []
+        for start, end in intervals:
+            if len(meetings) == 0 or start < meetings[0]:
+                heapq.heappush(meetings, end)
+            else:
+                heapq.heapreplace(meetings, end)
+        return len(meetings)

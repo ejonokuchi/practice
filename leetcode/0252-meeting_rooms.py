@@ -38,4 +38,13 @@ from typing import List
 
 class Solution:
     def canAttendMeetings(self, intervals: List[List[int]]) -> bool:
-        pass
+        """
+        Sorts the intervals by start time and checks for overlapping positions.
+
+        Time  : O(n log n)
+        Space : O(1)
+        """
+        intervals.sort()
+        return all(
+            intervals[i][1] <= intervals[i + 1][0] for i in range(len(intervals) - 1)
+        )

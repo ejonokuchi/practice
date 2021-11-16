@@ -8,7 +8,7 @@ Software Engineer and Machine Learning Interview resources, for personal use.
 
 ### Leetcode Problems
 
-50/75.
+51/75.
 
 Arrays: ✅✅✅✅✅✅⬜️⬜️⬜️⬜️
 - [x] [1. Two Sum (Easy)](https://leetcode.com/problems/two-sum/)
@@ -85,7 +85,7 @@ String: ✅✅✅✅✅✅✅⬜️⬜️⬜️
 - [ ] [647. Palindromic Substrings (Medium)](https://leetcode.com/problems/palindromic-substrings/)
 - [ ] [271. Encode and Decode Strings - Premium (Medium)](https://leetcode.com/problems/encode-and-decode-strings/)
 
-Tree: ✅✅✅✅✅✅✅⬜️⬜️⬜️⬜️⬜️⬜️⬜️
+Tree: ✅✅✅✅✅✅✅✅⬜️⬜️⬜️⬜️⬜️⬜️
 - [x] [104. Maximum Depth of Binary Tree (Easy)](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
 - [x] [100. Same Tree (Easy)](https://leetcode.com/problems/same-tree/)
 - [x] [226. Invert Binary Tree (Easy)](https://leetcode.com/problems/invert-binary-tree/)
@@ -93,7 +93,7 @@ Tree: ✅✅✅✅✅✅✅⬜️⬜️⬜️⬜️⬜️⬜️⬜️
 - [x] [102. Binary Tree Level Order Traversal (Medium)](https://leetcode.com/problems/binary-tree-level-order-traversal/)
 - [x] [297. Serialize and Deserialize Binary Tree (Hard)](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/)
 - [x] [572. Subtree of Another Tree (Easy)](https://leetcode.com/problems/subtree-of-another-tree/)
-- [ ] [105. Construct Binary Tree from Preorder and Inorder Traversal (Medium)](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
+- [x] [105. Construct Binary Tree from Preorder and Inorder Traversal (Medium)](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
 - [ ] [98. Validate Binary Search Tree (Medium)](https://leetcode.com/problems/validate-binary-search-tree/)
 - [ ] [230. Kth Smallest Element in a BST (Medium)](https://leetcode.com/problems/kth-smallest-element-in-a-bst/)
 - [ ] [235. Lowest Common Ancestor of a Binary Search Tree (Easy)](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/)

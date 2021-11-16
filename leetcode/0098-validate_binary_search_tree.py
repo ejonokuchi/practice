@@ -61,5 +61,28 @@ from typing import Optional
 
 
 class Solution:
-    def isValidBST(self, root: Optional[TreeNode]) -> bool:
-        pass
+    def isValidBST(
+        self,
+        root: Optional[TreeNode],
+        min_value: float = -float("inf"),
+        max_value: float = float("inf"),
+    ) -> bool:
+        """
+        Returns True if the tree at root is a valid BST, i.e. satisfying:
+        • x < root, for all x in the left sub-tree
+        • root < x, for all x in the right sub-tree
+
+        Time  : O(n)
+        Space : O(1)
+        """
+        if root is None:
+            return True
+        return (
+            min_value < root.val < max_value
+            and self.isValidBST(
+                root=root.left, min_value=min_value, max_value=min(max_value, root.val)
+            )
+            and self.isValidBST(
+                root=root.right, min_value=max(min_value, root.val), max_value=max_value
+            )
+        )

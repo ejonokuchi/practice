@@ -70,4 +70,15 @@ class Solution:
     def lowestCommonAncestor(
         self, root: TreeNode, p: TreeNode, q: TreeNode
     ) -> TreeNode:
-        pass
+        """
+        Returns the lowest common ancestor (LCA) of the two given nodes by traversing
+        the tree until the following inequality `p.val <= x <= q.val` is satisfied,
+        where x is the value of the root, and p.val < q.val.
+
+        Time  : O(log n)
+        Space : O(log n)
+        """
+        lo, hi = (p.val, q.val) if p.val < q.val else (q.val, p.val)
+        while not lo <= root.val <= hi:
+            root = root.right if root.val < lo else root.left
+        return root

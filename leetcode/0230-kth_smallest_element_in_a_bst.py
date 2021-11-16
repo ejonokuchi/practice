@@ -52,9 +52,31 @@ class TreeNode:
         self.right = right
 
 
+from collections import deque
 from typing import Optional
 
 
 class Solution:
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
-        pass
+        """
+        Returns the kth smallest element by traversing the tree depth-first, and
+        returning after visiting k nodes.
+
+        From a given node in the tree, traverse left-first until a leaf is reached,
+        adding visited nodes to a stack. Then remove the last node from the stack,
+        increment the count, and recurse on the right sub-tree of the last parent.
+
+        Time  : O(n)
+        Space : O(n)
+        """
+        nodes, count = deque([]), 0
+        node = root
+        while True:
+            while node is not None:
+                nodes.append(node)
+                node = node.left
+            node = nodes.pop()
+            count += 1
+            if count == k:
+                return node.val
+            node = node.right

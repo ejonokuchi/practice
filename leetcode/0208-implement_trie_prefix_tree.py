@@ -62,17 +62,60 @@
 
 
 class Trie:
+    """
+    Implements a Trie, or a prefix tree, which supports fast insertion, search, and
+    prefix search.
+
+    For speed and clarity, maintains both a Set and a Trie internally. The Trie is
+    implemented as a nested dictionary, rather than an actual tree of nodes.
+
+    Space complexity is O(nm), where n is the number of words in the tree and m is the
+    length of the words.
+    """
+
     def __init__(self):
-        pass
+        """
+        Create the trie and the set.
+
+        Time  : O(1)
+        """
+        self.D = dict()
+        self.S = set()
 
     def insert(self, word: str) -> None:
-        pass
+        """
+        Adds a word to the trie and the set.
+
+        Time  : O(|word|)
+        """
+        d = self.D
+        for x in word:
+            if x not in d:
+                d[x] = dict()
+            d = d[x]
+        self.S.add(word)
+        return
 
     def search(self, word: str) -> bool:
-        pass
+        """
+        Checks if a word is in the set.
+
+        Time  : O(1)
+        """
+        return word in self.S
 
     def startsWith(self, prefix: str) -> bool:
-        pass
+        """
+        Checks if a prefix is in the trie.
+
+        Time  : O(|prefix|)
+        """
+        d = self.D
+        for x in prefix:
+            if x not in d:
+                return False
+            d = d[x]
+        return True
 
 
 # Your Trie object will be instantiated and called as such:

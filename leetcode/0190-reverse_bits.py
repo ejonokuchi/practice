@@ -61,4 +61,14 @@
 
 class Solution:
     def reverseBits(self, n: int) -> int:
-        pass
+        """
+        Shifts bits one-by-one onto a result, for 32 bits.
+
+        Time  : O(1)
+        Space : O(1)
+        """
+        result = 0
+        for _ in range(32):
+            result = (result << 1) | (n & 1)
+            n >>= 1
+        return result

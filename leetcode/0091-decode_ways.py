@@ -91,4 +91,33 @@
 
 class Solution:
     def numDecodings(self, s: str) -> int:
-        pass
+        """
+        Bottom-up solution. Computes an array of values D, where D[i] is the number of
+        decodings for the string ending at i - 1, i.e. the slice s[:i].
+
+        At each step, checks if the previous character is a valid code, and if the
+        previous 2 characters are a valid code. For each case, we add the corresponding
+        number of ways to the total ways to get to position i.
+
+        Recursion:
+        D[i] = 0                    if s[i - 1] is not valid
+             = D[i - 1]             if s[i - 1] is valid, but not a prefix
+             = D[i - 2]             if s[i - 2 : i] is valid
+             = D[i - 1] + D[i - 2]  if s[i - 1] and s[i - 2 : i] are both valid
+
+        Time  : O(n)
+        Space : O(n)
+        """
+        n = len(s)
+
+        D = [0] * (n + 1)
+        D[0] = 1
+        D[1] = int(1 <= int(s[0]) <= 9)
+
+        for i in range(2, n + 1):
+            if 1 <= int(s[i - 1]) <= 9:
+                D[i] += D[i - 1]
+            if 10 <= int(s[i - 2 : i]) <= 26:
+                D[i] += D[i - 2]
+
+        return D[n]

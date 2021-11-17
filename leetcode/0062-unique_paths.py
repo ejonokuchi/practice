@@ -65,7 +65,34 @@
 #
 #
 
+from math import factorial
+
 
 class Solution:
     def uniquePaths(self, m: int, n: int) -> int:
-        pass
+        """
+        Computes the number of unique paths as a combination.
+
+        Given a grid of size (m, n), we want to move from the upper left space, (0, 0),
+        to the bottom right space, (m - 1, n - 1). Thus, we have to take (m - 1) steps
+        down and (n - 1) steps right, that can be made in any order.
+
+        This can be visualized as an array of moves down (↓) or right (→):
+            e.g. [↓, ↓, →, →, →] for m = 3 and n = 4.
+
+        The total number of unique paths is thus given by the unique permutations of
+        this array: T! / (D! R!)
+
+        where:
+            • T is the total number of moves = (m - 1 + n - 1)
+            • D is the number of down moves = (m - 1)
+            • R is the number of right moves = (n - 1)
+
+        This can be considered as the number of ways to choose D elements from T, i.e.
+        D choose T, or the number of ways to arrange T elements where there are D and R
+        repeated elements.
+
+        Time  : O(mn)
+        Space : O(1)
+        """
+        return factorial(m + n - 2) // (factorial(m - 1) * factorial(n - 1))

@@ -73,4 +73,25 @@ from typing import List
 
 class Solution:
     def findMin(self, nums: List[int]) -> int:
-        pass
+        """
+        Runs a modified binary search to find the discontinuity in the input array.
+
+        At each iteration:
+        • Select the middle element, and check for the discontinuity. If found, return.
+        • If the leftmost element > the middle element, search the left half.
+        • If the leftmost element < the middle element, search the right right.
+
+        Time  : O(log n)
+        Space : O(1)
+        """
+        n = len(nums)
+        l, r = 0, n - 1
+        while l < r:
+            mid = (l + r) // 2
+            if nums[mid] > nums[(mid + 1) % n]:
+                return nums[(mid + 1) % n]
+            elif nums[l] > nums[mid]:
+                r = mid
+            else:
+                l = mid + 1
+        return nums[(l + 1) % n]

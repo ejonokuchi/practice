@@ -54,4 +54,35 @@ from typing import List
 
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
-        pass
+        """
+        Runs modified binary search, where the left or right sub-array is chosen for
+        recursion based on the location of the discontinuity.
+
+        At each step, check if the middle value is the target. If not, use the bounds to
+        determine which half of the sub-array is continuous. The target can be compared
+        to this side with a normal range check.
+
+        Time  : O(log n)
+        Space : O(1)
+        """
+        n = len(nums)
+        l, r = 0, n - 1
+        while l <= r:
+            mid = (l + r) // 2
+            if nums[mid] == target:
+                return mid
+
+            # Left sub-array is continuous
+            if nums[l] <= nums[mid]:
+                if nums[l] <= target <= nums[mid]:
+                    r = mid - 1
+                else:
+                    l = mid + 1
+            # Right sub-array is continuous
+            else:
+                if nums[mid] <= target <= nums[r]:
+                    l = mid + 1
+                else:
+                    r = mid - 1
+
+        return -1

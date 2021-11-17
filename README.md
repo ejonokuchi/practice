@@ -8,9 +8,9 @@ Software Engineer and Machine Learning Interview resources, for personal use.
 
 ### Leetcode Problems
 
-58/75.
+59/75.
 
-Arrays: ✅✅✅✅✅✅✅✅✅⬜️
+Arrays: ✅✅✅✅✅✅✅✅✅✅
 - [x] [1. Two Sum (Easy)](https://leetcode.com/problems/two-sum/)
 - [x] [121. Best Time to Buy and Sell Stock (Easy)](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
 - [x] [217. Contains Duplicate (Easy)](https://leetcode.com/problems/contains-duplicate/)
@@ -20,7 +20,7 @@ Arrays: ✅✅✅✅✅✅✅✅✅⬜️
 - [x] [153. Find Minimum in Rotated Sorted Array (Medium)](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
 - [x] [33. Search in Rotated Sorted Array (Medium)](https://leetcode.com/problems/search-in-rotated-sorted-array/)
 - [x] [15. 3Sum (Medium)](https://leetcode.com/problems/3sum/)
-- [ ] [11. Container With Most Water (Medium)](https://leetcode.com/problems/container-with-most-water/)
+- [x] [11. Container With Most Water (Medium)](https://leetcode.com/problems/container-with-most-water/)
 
 Binary: ✅✅✅✅⬜️
 - [x] [371. Sum of Two Integers (Medium)](https://leetcode.com/problems/sum-of-two-integers/)

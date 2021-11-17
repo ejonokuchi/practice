@@ -67,4 +67,30 @@ from typing import List
 
 class Solution:
     def maxArea(self, height: List[int]) -> int:
-        pass
+        """
+        Greedy two-pointer solution. Starts a window at the ends of the array, and
+        slides each end towards the middle until a potentially higher interval is found.
+
+        For a window given by bounds (l, r), the area can only be increased for a
+        shorter window (l', r') if the heights of the new bounds are higher. Since the
+        area is only determined by the shorter of the two bounds, moving the shorter
+        bound will never skip over a better solution.
+
+        At each iteration, choose the pointer from (l, r) with the shorter height, and
+        slide it towards the middle until a higher height is found.
+
+        Time  : O(n)
+        Space : O(1)
+        """
+        max_area = 0
+        l, r = 0, len(height) - 1
+        while l < r:
+            max_area = max(max_area, (r - l) * min(height[l], height[r]))
+            a, b = l, r
+            if height[l] < height[r]:
+                while l < r and height[l] <= height[a]:
+                    l += 1
+            else:
+                while l < r and height[r] <= height[b]:
+                    r -= 1
+        return max_area

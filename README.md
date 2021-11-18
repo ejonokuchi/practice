@@ -8,7 +8,7 @@ Software Engineer and Machine Learning Interview resources, for personal use.
 
 ### Leetcode Problems
 
-64/75.
+65/75.
 
 Arrays: ✅✅✅✅✅✅✅✅✅✅
 - [x] [1. Two Sum (Easy)](https://leetcode.com/problems/two-sum/)
@@ -42,14 +42,14 @@ Dynamic Programming: ✅✅✅✅✅✅✅✅✅✅✅
 - [x] [62. Unique Paths (Medium)](//leetcode.com/problems/unique-paths/)
 - [x] [55. Jump Game (Medium)](https://leetcode.com/problems/jump-game/)
 
-Graph: ✅✅✅✅✅✅⬜️⬜️
+Graph: ✅✅✅✅✅✅✅⬜️
 - [x] [133. Clone Graph (Medium)](https://leetcode.com/problems/clone-graph/)
 - [x] [207. Course Schedule (Medium)](https://leetcode.com/problems/course-schedule/)
 - [x] [417. Pacific Atlantic Water Flow (Medium)](https://leetcode.com/problems/pacific-atlantic-water-flow/)
 - [x] [200. Number of Islands (Medium)](https://leetcode.com/problems/number-of-islands/)
 - [x] [128. Longest Consecutive Sequence (Medium)](https://leetcode.com/problems/longest-consecutive-sequence/)
 - [x] [269. Alien Dictionary - Premium (Hard)](https://leetcode.com/problems/alien-dictionary/)
-- [ ] [261. Graph Valid Tree - Premium (Medium)](https://leetcode.com/problems/graph-valid-tree/)
+- [x] [261. Graph Valid Tree - Premium (Medium)](https://leetcode.com/problems/graph-valid-tree/)
 - [ ] [323. Number of Connected Components in an Undirected Graph - Premium (Medium)](https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/)
 
 Interval: ✅✅✅✅✅

@@ -47,9 +47,37 @@
 #
 #
 
+from collections import deque
 from typing import List
 
 
 class Solution:
     def validTree(self, n: int, edges: List[List[int]]) -> bool:
-        pass
+        """
+        Builds a graph from the tree edges and validates that it is connected via DFS.
+
+        Any undirected graph is a valid tree as long as it satisfies these conditions:
+        • the number of edges is exactly (n - 1)
+        • the graph is connected
+
+        Alternatively, the union-find algorithm can be used to check if the graph is
+        acyclic.
+
+        Time  : O(n)
+        Space : O(n)
+        """
+        if len(edges) != n - 1:
+            return False
+
+        G = {i: [] for i in range(n)}
+        for v, w in edges:
+            G[v].append(w)
+            G[w].append(v)
+
+        queue = deque([0])
+        while len(queue) > 0:
+            v = queue.pop()
+            neighbors = G.pop(v, [])
+            queue.extend(neighbors)
+
+        return len(G) == 0

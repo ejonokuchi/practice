@@ -8,7 +8,7 @@ Software Engineer and Machine Learning Interview resources, for personal use.
 
 ### Leetcode Problems
 
-62/75.
+63/75.
 
 Arrays: ✅✅✅✅✅✅✅✅✅✅
 - [x] [1. Two Sum (Easy)](https://leetcode.com/problems/two-sum/)
@@ -29,7 +29,7 @@ Binary: ✅✅✅✅✅
 - [x] [268. Missing Number (Easy)](https://leetcode.com/problems/missing-number/)
 - [x] [190. Reverse Bits (Easy)](https://leetcode.com/problems/reverse-bits/)
 
-Dynamic Programming: ✅✅✅✅✅✅✅✅✅✅⬜️
+Dynamic Programming: ✅✅✅✅✅✅✅✅✅✅✅
 - [x] [70. Climbing Stairs (Easy)](https://leetcode.com/problems/climbing-stairs/)
 - [x] [322. Coin Change (Medium)](https://leetcode.com/problems/coin-change/)
 - [x] [300. Longest Increasing Subsequence (Medium)](https://leetcode.com/problems/longest-increasing-subsequence/)
@@ -40,7 +40,7 @@ Dynamic Programming: ✅✅✅✅✅✅✅✅✅✅⬜️
 - [x] [213. House Robber II (Medium)](https://leetcode.com/problems/house-robber-ii/)
 - [x] [91. Decode Ways (Medium)](https://leetcode.com/problems/decode-ways/)
 - [x] [62. Unique Paths (Medium)](//leetcode.com/problems/unique-paths/)
-- [ ] [55. Jump Game (Medium)](https://leetcode.com/problems/jump-game/)
+- [x] [55. Jump Game (Medium)](https://leetcode.com/problems/jump-game/)
 
 Graph: ✅✅✅✅✅⬜️⬜️⬜️
 - [x] [133. Clone Graph (Medium)](https://leetcode.com/problems/clone-graph/)

@@ -50,4 +50,19 @@ from typing import List
 
 class Solution:
     def canJump(self, nums: List[int]) -> bool:
-        pass
+        """
+        Traverses the input array backwards, tracking the minimum index that can reach
+        the end.
+
+        If a jump at index i can reach index j, and index j can reach the end, the end
+        is reachable from i.
+
+        Time  : O(n)
+        Space : O(1)
+        """
+        n = len(nums)
+        min_idx_from_end = n - 1
+        for idx in range(n - 2, -1, -1):
+            if idx + nums[idx] >= min_idx_from_end:
+                min_idx_from_end = idx
+        return min_idx_from_end == 0

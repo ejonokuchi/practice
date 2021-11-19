@@ -100,7 +100,8 @@ class Solution:
         number of ways to the total ways to get to position i.
 
         Recursion:
-        D[i] = 0                    if s[i - 1] is not valid
+        D[i] = 1                    if i == 0
+             = 0                    if s[i - 1] is not valid
              = D[i - 1]             if s[i - 1] is valid, but not a prefix
              = D[i - 2]             if s[i - 2 : i] is valid
              = D[i - 1] + D[i - 2]  if s[i - 1] and s[i - 2 : i] are both valid

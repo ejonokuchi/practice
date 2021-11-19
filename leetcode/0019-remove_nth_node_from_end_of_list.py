@@ -62,4 +62,23 @@ from typing import Optional
 
 class Solution:
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
-        pass
+        """
+        Maintains two pointers, "slow" and "fast", giving the fast pointer a headstart
+        of n, and removing the node after the slow pointer when the fast pointer reaches
+        the end of the list.
+
+        If the head is the target node to remove, the fast pointer will be None after
+        the headstart.
+
+        Time  : O(n)
+        Space : O(1)
+        """
+        slow = fast = head
+        for _ in range(n):
+            fast = fast.next
+        if fast is None:
+            return head.next
+        while fast.next is not None:
+            slow, fast = slow.next, fast.next
+        slow.next = slow.next.next if slow.next is not None else None
+        return head

@@ -46,9 +46,35 @@
 #
 #
 
+from collections import deque
 from typing import List
 
 
 class Solution:
     def countComponents(self, n: int, edges: List[List[int]]) -> int:
-        pass
+        """
+        Builds a graph and runs DFS from each node to propagate its color to each of the
+        nodes connected to it.
+
+        Time  : O(V + E)
+        Space : O(V + E)
+        """
+        G = {i: set() for i in range(n)}
+        for v, w in edges:
+            G[v].add(w)
+            G[w].add(v)
+
+        colors = list(range(n))
+
+        visited = set()
+        queue = deque(range(n))
+        while len(queue) > 0:
+            v = queue.pop()
+            if v in visited:
+                continue
+            visited.add(v)
+            for w in G[v]:
+                colors[w] = colors[v]
+                queue.append(w)
+
+        return len(set(colors))

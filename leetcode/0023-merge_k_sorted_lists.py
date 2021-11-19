@@ -66,9 +66,32 @@ class ListNode:
         self.next = next
 
 
+import heapq
 from typing import List, Optional
 
 
 class Solution:
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
-        pass
+        """
+        Maintains a min-heap of the current values in each list, picking the minimum
+        value to add to the flattened list.
+
+        Time  : O(n log k)
+        Space : O(n)
+
+        where n is the total number of elements and k is the number of lists.
+        """
+        dummy = node = ListNode()
+
+        next_vals = [(x.val, idx) for idx, x in enumerate(lists) if x is not None]
+        heapq.heapify(next_vals)
+
+        while len(next_vals) > 0:
+            _, next_idx = heapq.heappop(next_vals)
+            node.next = lists[next_idx]
+            node = node.next
+            lists[next_idx] = lists[next_idx].next
+            if lists[next_idx] is not None:
+                heapq.heappush(next_vals, (lists[next_idx].val, next_idx))
+
+        return dummy.next

@@ -8,7 +8,7 @@ Software Engineer and Machine Learning Interview resources, for personal use.
 
 ### Leetcode Problems
 
-68/75.
+69/75.
 
 Arrays: ✅✅✅✅✅✅✅✅✅✅
 - [x] [1. Two Sum (Easy)](https://leetcode.com/problems/two-sum/)
@@ -59,13 +59,13 @@ Interval: ✅✅✅✅✅
 - [x] [252. Meeting Rooms - Premium (Easy)](https://leetcode.com/problems/meeting-rooms/)
 - [x] [253. Meeting Rooms II - Premium (Medium)](https://leetcode.com/problems/meeting-rooms-ii/)
 
-Linked List: ✅✅✅✅✅⬜️
+Linked List: ✅✅✅✅✅✅
 - [x] [206. Reverse Linked List (Easy)](https://leetcode.com/problems/reverse-linked-list/)
 - [x] [141. Linked List Cycle (Easy)](https://leetcode.com/problems/linked-list-cycle/)
 - [x] [21. Merge Two Sorted Lists (Easy)](https://leetcode.com/problems/merge-two-sorted-lists/)
 - [x] [23. Merge k Sorted Lists (Hard)](https://leetcode.com/problems/merge-k-sorted-lists/)
 - [x] [19. Remove Nth Node From End of List (Medium)](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
-- [ ] [143. Reorder List (Medium)](https://leetcode.com/problems/reorder-list/)
+- [x] [143. Reorder List (Medium)](https://leetcode.com/problems/reorder-list/)
 
 Matrix: ✅✅✅⬜️
 - [x] [73. Set Matrix Zeroes (Medium)](https://leetcode.com/problems/set-matrix-zeroes/)

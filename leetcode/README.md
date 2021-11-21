@@ -1,6 +1,6 @@
 # Leetcode Problems
 
-Credit to [a user on Blind](https://www.teamblind.com/post/New-Year-Gift---Curated-List-of-Top-75-LeetCode-Questions-to-Save-Your-Time-OaM1orEU) for compiling this list.
+Credit to [a user on Blind](https://www.teamblind.com/post/New-Year-Gift---Curated-List-of-Top-75-LeetCode-Questions-to-Save-Your-Time-OaM1orEU) for compiling this list of 75 questions.
 
 ---
 
@@ -88,7 +88,7 @@ Tree:
 - [297. Serialize and Deserialize Binary Tree (Hard)](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/)
 - [572. Subtree of Another Tree (Easy)](https://leetcode.com/problems/subtree-of-another-tree/)
 - [105. Construct Binary Tree from Preorder and Inorder Traversal (Medium)](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
-- [x] [98. Validate Binary Search Tree (Medium)](https://leetcode.com/problems/validate-binary-search-tree/)
+- [98. Validate Binary Search Tree (Medium)](https://leetcode.com/problems/validate-binary-search-tree/)
 - [230. Kth Smallest Element in a BST (Medium)](https://leetcode.com/problems/kth-smallest-element-in-a-bst/)
 - [235. Lowest Common Ancestor of a Binary Search Tree (Easy)](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/)
 - [208. Implement Trie (Prefix Tree (Medium)](https://leetcode.com/problems/implement-trie-prefix-tree/)

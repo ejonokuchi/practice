@@ -47,4 +47,25 @@
 
 class Solution:
     def countSubstrings(self, s: str) -> int:
-        pass
+        """
+        Counts palindromes centered at each index in the string.
+
+        Initialize the count to n, 1 for each length 1 palindrome. For each index, add 1
+        for every repeated character in the center, and then expand two pointers to the
+        left and right, and add 1 for every valid expansion.
+
+        Time  : O(n^2)
+        Space : O(1)
+        """
+        n = len(s)
+        count = n
+        for idx in range(n):
+            i = j = idx
+            while j < n - 1 and s[j + 1] == s[idx]:
+                j += 1
+                count += 1
+            while 0 < i and j < n - 1 and s[i - 1] == s[j + 1]:
+                i -= 1
+                j += 1
+                count += 1
+        return count

@@ -65,4 +65,34 @@ from typing import List
 
 class Solution:
     def exist(self, board: List[List[str]], word: str) -> bool:
-        pass
+        """
+        Searches for the word in the board via DFS.
+
+        Starts a search from every position in the board matching the first character
+        of the word. In each search, as characters are matched, the board is modified
+        in-place to ensure positions are not used twice. The board is reset if the
+        search fails.
+
+        Time  : O(n * m * 3^W)
+        Space : O(W), not including the board
+
+        where the board is size (n, m) and W is the length of the word
+        """
+        n, m = len(board), len(board[0])
+
+        def dfs(r: int, c: int, word_idx: int):
+            """Search for a word via DFS, modifying the grid in-place."""
+            if word_idx == len(word):
+                return True
+            char = board[r][c]
+            board[r][c] = "$"
+            for i, j in [(r - 1, c), (r + 1, c), (r, c - 1), (r, c + 1)]:
+                if 0 <= i < n and 0 <= j < m and board[i][j] == word[word_idx]:
+                    if dfs(i, j, word_idx + 1):
+                        return True
+            board[r][c] = char
+            return False
+
+        return any(
+            dfs(i, j, 1) for i in range(n) for j in range(m) if board[i][j] == word[0]
+        )

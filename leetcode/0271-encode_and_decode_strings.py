@@ -94,15 +94,41 @@ from typing import List
 
 
 class Codec:
+    """
+    Encodings begin with a prefix indicating the length of each string. When decoding,
+    the delimiting character is found greedily, and then each substring is extracted
+    one by one.
+
+    Alternatively, since we know the input is ASCII-only, we could use join/split with
+    a non-ASCII character, like π.
+
+    Example
+    -------
+    >>> strs = [
+        "hello",
+        "my",
+        "old",
+        "friend",
+    ]
+    >>> encode(strs)
+    >>> "5.2.3.6/hellomyoldfriend"
+
+    """
+
     def encode(self, strs: List[str]) -> str:
-        """Encodes a list of strings to a single string.
-        """
-        pass
+        """Encodes a list of strings to a single string."""
+        return ".".join(f"{len(s)}" for s in strs) + "/" + "".join(strs)
 
     def decode(self, s: str) -> List[str]:
-        """Decodes a single string to a list of strings.
-        """
-        pass
+        """Decodes a single string to a list of strings."""
+        idx = s.index("/")
+        lengths = map(int, s[:idx].split("."))
+        strings = []
+        idx += 1
+        for n in lengths:
+            strings.append(s[idx : idx + n])
+            idx += n
+        return strings
 
 
 # Your Codec object will be instantiated and called as such:

@@ -61,15 +61,62 @@
 #
 
 
+from collections import deque
+
+
 class WordDictionary:
+    """
+    Implements a word dictionary supporting fuzzy matching with a trie.
+
+    Saves words in a nested dictionary with demarcated endings, and searches via DFS.
+
+    Space : O(n*m)
+
+    where n is the number of words, and m is the length of the longest word.
+    """
+
     def __init__(self):
-        pass
+        self.D = dict()
 
     def addWord(self, word: str) -> None:
-        pass
+        """
+        Adds a word to the trie, marking the end with an "END" key.
+
+        Time  : O(n)
+        """
+        d = self.D
+        for char in word:
+            if char not in d:
+                d[char] = dict()
+            d = d[char]
+        d["END"] = dict()
+        return
 
     def search(self, word: str) -> bool:
-        pass
+        """
+        Searches for the word in the trie via DFS.
+
+        For each character of the word, look for a matching dictionary entry, including
+        all existing entries if the character is the "." wildcard. When the end of the
+        word is reached, ensure the "END" token is an entry in this sub-tree.
+
+        Time  : O(nm)
+        """
+        d = self.D
+        queue = deque([(word, d)])
+        while len(queue) > 0:
+            w, d = queue.pop()
+            char = w[0]
+            if len(w) == 1:
+                if (char in d and "END" in d[char]) or (
+                    char == "." and any("END" in d[k] for k in d.keys() if k != "END")
+                ):
+                    return True
+            elif char == "." and len(d) > 0:
+                queue.extend([(w[1:], d[k]) for k in d])
+            elif char in d:
+                queue.append((w[1:], d[char]))
+        return False
 
 
 # Your WordDictionary object will be instantiated and called as such:

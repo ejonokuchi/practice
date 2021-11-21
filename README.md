@@ -85,7 +85,7 @@ String: ✅✅✅✅✅✅✅✅✅✅
 - [x] [647. Palindromic Substrings (Medium)](https://leetcode.com/problems/palindromic-substrings/)
 - [x] [271. Encode and Decode Strings - Premium (Medium)](https://leetcode.com/problems/encode-and-decode-strings/)
 
-Tree: ✅✅✅✅✅✅✅✅✅✅✅✅⬜️⬜️
+Tree: ✅✅✅✅✅✅✅✅✅✅✅✅✅⬜️
 - [x] [104. Maximum Depth of Binary Tree (Easy)](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
 - [x] [100. Same Tree (Easy)](https://leetcode.com/problems/same-tree/)
 - [x] [226. Invert Binary Tree (Easy)](https://leetcode.com/problems/invert-binary-tree/)
@@ -98,7 +98,7 @@ Tree: ✅✅✅✅✅✅✅✅✅✅✅✅⬜️⬜️
 - [x] [230. Kth Smallest Element in a BST (Medium)](https://leetcode.com/problems/kth-smallest-element-in-a-bst/)
 - [x] [235. Lowest Common Ancestor of a Binary Search Tree (Easy)](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/)
 - [x] [208. Implement Trie (Prefix Tree (Medium)](https://leetcode.com/problems/implement-trie-prefix-tree/)
-- [ ] [211. Design Add and Search Words Data Structure (Medium)](https://leetcode.com/problems/add-and-search-word-data-structure-design/)
+- [x] [211. Design Add and Search Words Data Structure (Medium)](https://leetcode.com/problems/add-and-search-word-data-structure-design/)
 - [ ] [212. Word Search II (Hard)](https://leetcode.com/problems/word-search-ii/)
 
 Heap: ✅✅

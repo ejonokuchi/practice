@@ -8,7 +8,7 @@ Software Engineer and Machine Learning Interview resources, for personal use.
 
 ### Leetcode Problems
 
-70/75.
+71/75.
 
 Arrays: ✅✅✅✅✅✅✅✅✅✅
 - [x] [1. Two Sum (Easy)](https://leetcode.com/problems/two-sum/)
@@ -73,7 +73,7 @@ Matrix: ✅✅✅✅
 - [x] [48. Rotate Image (Medium)](https://leetcode.com/problems/rotate-image/)
 - [x] [79. Word Search (Medium)](https://leetcode.com/problems/word-search/)
 
-String: ✅✅✅✅✅✅✅⬜️⬜️⬜️
+String: ✅✅✅✅✅✅✅✅⬜️⬜️
 - [x] [3. Longest Substring Without Repeating Characters (Medium)](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
 - [x] [424. Longest Repeating Character Replacement (Medium)](https://leetcode.com/problems/longest-repeating-character-replacement/)
 - [x] [76. Minimum Window Substring (Hard)](https://leetcode.com/problems/minimum-window-substring/)
@@ -81,7 +81,7 @@ String: ✅✅✅✅✅✅✅⬜️⬜️⬜️
 - [x] [49. Group Anagrams (Medium)](https://leetcode.com/problems/group-anagrams/)
 - [x] [20. Valid Parentheses (Easy)](https://leetcode.com/problems/valid-parentheses/)
 - [x] [125. Valid Palindrome (Easy)](https://leetcode.com/problems/valid-palindrome/)
-- [ ] [5. Longest Palindromic Substring (Medium)](https://leetcode.com/problems/longest-palindromic-substring/)
+- [x] [5. Longest Palindromic Substring (Medium)](https://leetcode.com/problems/longest-palindromic-substring/)
 - [ ] [647. Palindromic Substrings (Medium)](https://leetcode.com/problems/palindromic-substrings/)
 - [ ] [271. Encode and Decode Strings - Premium (Medium)](https://leetcode.com/problems/encode-and-decode-strings/)
 

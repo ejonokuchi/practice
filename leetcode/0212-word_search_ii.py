@@ -52,9 +52,58 @@
 #
 #
 
-from typing import List
+from typing import Any, Dict, List
 
 
 class Solution:
     def findWords(self, board: List[List[str]], words: List[str]) -> List[str]:
-        pass
+        """
+        Builds a trie of words, and runs DFS from each position of the board which
+        matches an entry at the current sub-trie.
+
+        Given words with significant overlap, e.g. "computer" and "computers", a trie
+        enables one search to cover both words, only branching when they differ.
+
+        During each DFS call, the board is modified in-place to track the current path.
+        Before returning, the board is reset for any future calls.
+
+        Time  : O(n * m * w * k)
+        Space : O(w * k)
+
+        where the board is size (n, m), w is the number of words, and k is the length of
+        the longest word.
+        """
+        n, m = len(board), len(board[0])
+
+        # Construct a trie for efficient prefix searching.
+        trie = dict()
+        for word in words:
+            d = trie
+            for char in word:
+                if char not in d:
+                    d[char] = dict()
+                d = d[char]
+            d["END"] = word
+
+        found = set()
+
+        def dfs(r: int, c: int, d: Dict[str, Any]):
+            """Search for a word via DFS, modifying the grid in-place."""
+            if "END" in d:
+                found.add(d["END"])
+            char = board[r][c]
+            board[r][c] = "$"
+            for i, j in ((r - 1, c), (r + 1, c), (r, c - 1), (r, c + 1)):
+                if 0 <= i < n and 0 <= j < m:
+                    if board[i][j] in d:
+                        dfs(i, j, d[board[i][j]])
+            board[r][c] = char
+            return
+
+        # From each location matching a first letter, begin DFS.
+        for i in range(n):
+            for j in range(m):
+                if board[i][j] in trie:
+                    dfs(i, j, trie[board[i][j]])
+
+        return list(found)

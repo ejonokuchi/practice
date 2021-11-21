@@ -8,7 +8,7 @@ Software Engineer and Machine Learning Interview resources, for personal use.
 
 ### Leetcode Problems
 
-73/75.
+74/75.
 
 Arrays: ✅✅✅✅✅✅✅✅✅✅
 - [x] [1. Two Sum (Easy)](https://leetcode.com/problems/two-sum/)
@@ -85,7 +85,7 @@ String: ✅✅✅✅✅✅✅✅✅✅
 - [x] [647. Palindromic Substrings (Medium)](https://leetcode.com/problems/palindromic-substrings/)
 - [x] [271. Encode and Decode Strings - Premium (Medium)](https://leetcode.com/problems/encode-and-decode-strings/)
 
-Tree: ✅✅✅✅✅✅✅✅✅✅✅✅✅⬜️
+Tree: ✅✅✅✅✅✅✅✅✅✅✅✅✅✅
 - [x] [104. Maximum Depth of Binary Tree (Easy)](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
 - [x] [100. Same Tree (Easy)](https://leetcode.com/problems/same-tree/)
 - [x] [226. Invert Binary Tree (Easy)](https://leetcode.com/problems/invert-binary-tree/)
@@ -99,7 +99,7 @@ Tree: ✅✅✅✅✅✅✅✅✅✅✅✅✅⬜️
 - [x] [235. Lowest Common Ancestor of a Binary Search Tree (Easy)](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/)
 - [x] [208. Implement Trie (Prefix Tree (Medium)](https://leetcode.com/problems/implement-trie-prefix-tree/)
 - [x] [211. Design Add and Search Words Data Structure (Medium)](https://leetcode.com/problems/add-and-search-word-data-structure-design/)
-- [ ] [212. Word Search II (Hard)](https://leetcode.com/problems/word-search-ii/)
+- [x] [212. Word Search II (Hard)](https://leetcode.com/problems/word-search-ii/)
 
 Heap: ✅✅
 - [x] [347. Top K Frequent Elements (Medium)](https://leetcode.com/problems/top-k-frequent-elements/)

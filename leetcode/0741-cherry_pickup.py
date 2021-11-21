@@ -72,9 +72,67 @@
 #
 #
 
+from functools import lru_cache
 from typing import List
 
 
 class Solution:
     def cherryPickup(self, grid: List[List[int]]) -> int:
-        pass
+        """
+        Memoized DP approach using depth-first search.
+
+        If we consider paths of the structure A -> B -> C, then we build out solutions
+        in a middle-out fashion, starting from the end location, B, and increasing the
+        path in both directions, e.g. (B') -> B -> (B''), where B' is x steps before B
+        on the outbound trip, and B'' is x steps after reaching B on the return trip.
+
+        Let C[r1, c1, r2, c2] be the maximum number of cherries that can be picked up in
+        a path from (r1, c1) to (n - 1, n - 1) and back to (r2, c2).
+
+        Recursion:
+        C[r1, c1, r2, c2] = -inf            if any position is out of bounds
+                          = -inf            if either position is a thorn
+                          = grid[r1][c1]    if the position is the end
+                                            otherwise:
+                          = num_cherries_here + max(
+                              C[r1 + 1, c1, r2 + 1, c2],
+                              C[r1 + 1, c1, r2, c2 + 1],
+                              C[r1, c1 + 1, r2 + 1, c2],
+                              C[r1, c1 + 1, r2, c2 + 1],
+                          )
+
+        where 'num_cherries_here' is the number of cherries at (r1, c1) and (r2, c2), or
+        just (r1, c1) if the points are the same.
+
+        Time  : O(n^4)
+        Space : O(n^4)
+        """
+        n = len(grid)
+
+        @lru_cache(None)
+        def max_pickup(r1: int, c1: int, r2: int, c2: int) -> float:
+            """
+            Recursively computes and memoizes the maximum number of cherries attainable
+            in a path from (r1, c1) to (n - 1, n - 1) and back to (r2, c2).
+
+            Note: since steps are made simultaneously, if (r1, c1) == (n - 1, n - 1),
+            and the bounds are valid, then (r2, c2) must also equal (n - 1, n - 1).
+            """
+            if r1 == n or c1 == n or r2 == n or c2 == n:
+                return -float("inf")
+            if grid[r1][c1] == -1 or grid[r2][c2] == -1:
+                return -float("inf")
+            if r1 == n - 1 and c1 == n - 1:
+                return grid[r1][c1]
+
+            num_cherries_here = (
+                grid[r1][c1] if r1 == r2 and c1 == c2 else grid[r1][c1] + grid[r2][c2]
+            )
+            return num_cherries_here + max(
+                max_pickup(r1 + 1, c1, r2 + 1, c2),
+                max_pickup(r1 + 1, c1, r2, c2 + 1),
+                max_pickup(r1, c1 + 1, r2 + 1, c2),
+                max_pickup(r1, c1 + 1, r2, c2 + 1),
+            )
+
+        return max(max_pickup(0, 0, 0, 0), 0)

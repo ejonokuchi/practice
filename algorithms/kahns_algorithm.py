@@ -52,7 +52,6 @@ def test_find_topo_order():
     0     1    3
      ↘   ↙
        5
-
     """
     n = 6
     edges = [

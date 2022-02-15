@@ -2,6 +2,8 @@
 
 Credit to [a user on Blind](https://www.teamblind.com/post/New-Year-Gift---Curated-List-of-Top-75-LeetCode-Questions-to-Save-Your-Time-OaM1orEU) for compiling this list of 75 questions.
 
+Used the [leetcode-cli](https://github.com/skygragon/leetcode-cli) tool.
+
 ---
 
 Arrays:

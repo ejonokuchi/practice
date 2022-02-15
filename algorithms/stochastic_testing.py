@@ -9,9 +9,7 @@ import math
 import random
 from typing import Any, Counter, Dict
 
-import numpy as np
-from scipy.stats import binomtest, norm
-from scipy.stats.stats import chisquare
+from scipy.stats import binomtest, chisquare, norm
 
 
 def bernoulli(p: float = 0.5) -> bool:
@@ -42,11 +40,9 @@ class Categorical:
         keys = list(d.keys())
         # construct cumulative distribution
         total = sum(d.values())
-        for k in keys:
-            d[k] /= total
         cume_dist = 0
         for k in keys:
-            cume_dist += d[k]
+            cume_dist += d[k] / total
             d[k] = cume_dist
         return keys, d
 
@@ -73,7 +69,7 @@ def test_bernoulli_even():
 
     z = (p_hat - p) / math.sqrt(p * (1 - p) / n)
     p_value = norm.sf(abs(z)) * 2
-    assert p_value > alpha
+    assert not p_value < alpha
 
 
 def test_bernoulli_uneven():
@@ -91,7 +87,7 @@ def test_bernoulli_uneven():
     k = sum(samples)
 
     test = binomtest(k=k, n=n, p=p, alternative="two-sided")
-    assert test.pvalue > alpha
+    assert not test.pvalue < alpha
 
 
 def test_categorical_normalized():
@@ -116,9 +112,10 @@ def test_categorical_normalized():
     counts_exp = {k: (v / total) * n for k, v in d.items()}
 
     test = chisquare(
-        f_obs=[counts_obs[k] for k in keys], f_exp=[counts_exp[k] for k in keys],
+        f_obs=[counts_obs[k] for k in keys],
+        f_exp=[counts_exp[k] for k in keys],
     )
-    assert test.pvalue > alpha
+    assert not test.pvalue < alpha
 
 
 def test_categorical_unnormalized():
@@ -143,6 +140,7 @@ def test_categorical_unnormalized():
     counts_exp = {k: (v / total) * n for k, v in d.items()}
 
     test = chisquare(
-        f_obs=[counts_obs[k] for k in keys], f_exp=[counts_exp[k] for k in keys],
+        f_obs=[counts_obs[k] for k in keys],
+        f_exp=[counts_exp[k] for k in keys],
     )
-    assert test.pvalue > alpha
+    assert not test.pvalue < alpha

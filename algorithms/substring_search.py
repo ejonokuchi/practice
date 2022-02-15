@@ -44,7 +44,7 @@ class RollingHash:
         Computes the hash value from the string.
 
         For string s,
-        hash(s) = (ord(s[0]) * c^(n-1) % p) + ... + (ord(s[0]) * c^0 % p)
+        hash(s) = (ord(s[0]) * c^(n-1) % p) + ... + (ord(s[-1]) * c^0 % p)
         """
         self.hash = 0
         for idx, char in enumerate(s):
@@ -56,7 +56,7 @@ class RollingHash:
         """
         Updates the hash based on the first character and a new character.
 
-        hash(s[1:] + "a") = (((hash(s) - hash(s[0])) * c) % p + hash[a]) % p
+        hash(s[1:] + "a") = (hash(s) - ((hash(s[0]) * c^(n-1)) % p) + hash[a]) % p
         """
         if self.hash is None:
             raise RuntimeError("No hash has been set!")
